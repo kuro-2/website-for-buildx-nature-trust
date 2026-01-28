@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const heroImages = [
-  'https://images.unsplash.com/photo-1656783208368-a7d176736535?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb3Jlc3QlMjBuYXR1cmUlMjB0cmVlc3xlbnwxfHx8fDE3Njg2NTU2MzN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  'https://images.unsplash.com/photo-1642265466368-2a491569308a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlbiUyMGxhbmRzY2FwZSUyMGVhcnRofGVufDF8fHx8MTc2ODY1NTYzNHww&ixlib=rb-4.1.0&q=80&w=1080',
-  'https://images.unsplash.com/photo-1650793889985-2090d35deb66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmFsJTIwZW52aXJvbm1lbnQlMjB3YXRlcnxlbnwxfHx8fDE3Njg2NTU2MzR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  '/assets/images/hero1.jpg',
+  '/assets/images/hero2.jpg',
+  '/assets/images/hero3.jpg',
+  '/assets/images/hero4.jpg',
 ];
 
 const animatedPhrases = [
@@ -31,7 +32,7 @@ export function Hero() {
   useEffect(() => {
     const phraseInterval = setInterval(() => {
       setCurrentPhraseIndex((prev) => (prev + 1) % animatedPhrases.length);
-    }, 3500);
+    }, 6000); // Match the image transition timing
 
     return () => clearInterval(phraseInterval);
   }, []);
@@ -67,20 +68,22 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
             className="mb-8"
           >
-            <h1 className="text-5xl md:text-7xl mb-6 leading-tight" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl mb-6 leading-tight" style={{ fontFamily: 'Cormorant, serif' }}>
               Mother Earth is{' '}
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={currentPhraseIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
-                  className="inline-block text-[#90D5B0]"
-                >
-                  {animatedPhrases[currentPhraseIndex]}
-                </motion.span>
-              </AnimatePresence>
+              <span className="inline-block text-[#90D5B0]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentPhraseIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className="inline-block"
+                  >
+                    {animatedPhrases[currentPhraseIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </h1>
           </motion.div>
 
@@ -96,7 +99,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -110,7 +113,7 @@ export function Hero() {
         >
           <div className="w-1 h-3 bg-white/70 rounded-full" />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

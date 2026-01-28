@@ -75,7 +75,8 @@ function CounterItem({ icon, end, label, suffix = '', delay = 0 }: CounterItemPr
   );
 }
 
-export function ImpactCounter() {
+/*
+// export function ImpactCounter() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -119,3 +120,4 @@ export function ImpactCounter() {
     </section>
   );
 }
+*/

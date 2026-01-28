@@ -1,5 +1,5 @@
 import { Hero } from './Hero';
-import { ImpactCounter } from './ImpactCounter';
+// import { ImpactCounter } from './ImpactCounter';
 import { ScrollReveal } from './ScrollReveal';
 import { ArrowRight } from 'lucide-react';
 
@@ -12,7 +12,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     <div>
       <Hero />
 
-      <ImpactCounter />
+      {/* <ImpactCounter /> */}
 
       {/* Introduction Section */}
       <section className="py-20 bg-[#FAFAFA]">
