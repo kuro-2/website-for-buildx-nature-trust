@@ -91,27 +91,60 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 
       {/* Office Location */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center">
+            <div className="text-center mb-8">
               <h3 className="text-2xl mb-4 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
                 Our Office
               </h3>
               <div className="w-12 h-[1px] bg-[#2F6B4F] mx-auto mb-6" />
-              <address className="not-italic text-[#6B6B6B] leading-relaxed">
-                BuildX Nature Trust<br />
-                #123, Green Valley Road<br />
-                Koramangala, Bangalore - 560034<br />
-                Karnataka, India
+              <address className="not-italic text-[#6B6B6B] leading-relaxed mb-6">
+                BUILDX INTERIOR PRODUCTS PRIVATE LIMITED <br />
+                No 4/2 MELUKOTE, West of Chord Road <br />
+                Stage 2, 1st Main Road industrial town, <br />
+                Bengaluru, Bengaluru Urban, Karnataka, <br />
+                560010
               </address>
+            </div>
+            
+            {/* Embedded Map */}
+            <div className="rounded-xl overflow-hidden shadow-lg border border-[#E5E5E5] relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9999999999995!2d77.527738!3d12.971598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae168305fb2ad9%3A0x2c63f0a96955b030!2sBUILDX%20INTERIOR%20PRODUCTS%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="BuildX Nature Trust Location"
+              ></iframe>
+              <button
+                onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=BUILDX+INTERIOR+PRODUCTS+PRIVATE+LIMITED+No+4/2+MELUKOTE+West+of+Chord+Road+Stage+2+1st+Main+Road+industrial+town+Bengaluru+Bengaluru+Urban+Karnataka+560010', '_blank')}
+                className="absolute bottom-4 right-4 bg-white text-[#2F6B4F] px-4 py-2 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 flex items-center gap-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Open in Maps
+              </button>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-[#2F6B4F] text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section 
+        className="py-20 bg-[#2F6B4F] text-white relative"
+        style={{
+          backgroundImage: "url('/assets/images/leaf-background.jpg')",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'Cormorant, serif' }}>
               Join Our Mission

@@ -13,8 +13,30 @@ export function Footer({ onNavigate }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-[#F5F5F5] border-t border-[#E5E5E5]">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <footer className="relative bg-[#F5F5F5] border-t border-[#E5E5E5] overflow-hidden" style={{ minHeight: '200px' }}>
+      {/* Parallax Forest Background */}
+      <div className="parallax-container">
+        {/* Distant Tree Layer - Slowest and lightest */}
+        <div 
+          className="parallax-layer parallax-layer-1"
+          style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
+        ></div>
+        
+        {/* Middle Tree Layer - Medium speed and opacity */}
+        <div 
+          className="parallax-layer parallax-layer-2"
+          style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
+        ></div>
+        
+        {/* Foreground Tree Layer - Fastest and darkest */}
+        <div 
+          className="parallax-layer parallax-layer-3"
+          style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
+        ></div>
+      </div>
+      
+      {/* Footer Content - Static over the parallax background */}
+      <div className="footer-content max-w-7xl mx-auto px-6 py-12 relative z-50">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
@@ -67,7 +89,7 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-[#E5E5E5] text-center text-sm text-[#9A9A9A]">
+        <div className="mt-8 pt-8 border-t border-[#E5E5E5] text-center text-sm text-[#1f1f1f]">
           © 2026 BuildX Nature Trust. All rights reserved.
         </div>
       </div>

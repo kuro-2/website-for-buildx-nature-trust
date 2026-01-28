@@ -189,3 +189,80 @@
     line-height: 1.5;
   }
 }
+
+/* Parallax Forest Footer Animations */
+@keyframes parallaxLayer1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes parallaxLayer2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes parallaxLayer3 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.parallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
+  background-size: 25% auto;
+  display: flex;
+  align-items: flex-end;
+  transform-origin: center;
+}
+
+.parallax-layer-1 {
+  animation: parallaxLayer1 80s linear infinite;
+  opacity: 0.3;
+  z-index: 10;
+}
+
+.parallax-layer-2 {
+  animation: parallaxLayer2 60s linear infinite;
+  opacity: 0.5;
+  z-index: 20;
+}
+
+.parallax-layer-3 {
+  animation: parallaxLayer3 40s linear infinite;
+  opacity: 0.8;
+  z-index: 30;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 40;
+  padding-top: 80px;
+}

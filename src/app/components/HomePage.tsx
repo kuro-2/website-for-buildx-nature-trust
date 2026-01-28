@@ -88,8 +88,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-[#2F6B4F] text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section 
+        className="py-20 bg-[#2F6B4F] text-white relative"
+        style={{
+          backgroundImage: "url('/assets/images/leaf-background.jpg')",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'Cormorant, serif' }}>
               Join the Movement
