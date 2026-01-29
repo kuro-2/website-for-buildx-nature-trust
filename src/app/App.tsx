@@ -45,7 +45,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#E2DBD0]">
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
       <motion.main
         key={currentPage}

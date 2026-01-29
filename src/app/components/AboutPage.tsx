@@ -8,18 +8,20 @@ interface TeamMember {
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <div className="group">
-      <div className="relative overflow-hidden rounded-full aspect-square mb-4">
+    <div className="group bg-[#FFFDF5] p-6 rounded-2xl border border-[#d1c7bc] hover:border-[#628B35] transition-colors h-full flex flex-col">
+      <div className="relative overflow-hidden rounded-full aspect-square mb-4 border-2 border-[#E2DBD0] shrink-0">
         <img
           src={member.image}
           alt={member.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <h3 className="text-xl text-center mb-1 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
-        {member.name}
-      </h3>
-      <p className="text-sm text-center text-[#6B6B6B]">{member.role}</p>
+      <div className="flex-grow flex flex-col justify-center">
+        <h3 className="text-xl text-center mb-1 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
+          {member.name}
+        </h3>
+        <p className="text-sm text-center text-[#628B35] font-medium">{member.role}</p>
+      </div>
     </div>
   );
 }
@@ -53,60 +55,71 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   ];
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 bg-[#E2DBD0]">
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#E2DBD0]">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-6xl text-center mb-8 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h1 className="text-4xl md:text-6xl text-center mb-8 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               About Us
             </h1>
-            <div className="w-16 h-[1px] bg-[#2F6B4F] mx-auto mb-12" />
+            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-12" />
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-lg leading-relaxed text-[#6B6B6B] mb-8">
-              BuildX Nature Trust was born from a simple belief: that every small action for the environment 
-              creates ripples of change. We are a collective of passionate individuals dedicated to protecting 
-              our planet through direct action, education, and community engagement.
-            </p>
-            <p className="text-lg leading-relaxed text-[#6B6B6B]">
-              Our work is grounded in the understanding that environmental stewardship is not a trend—it's 
-              a responsibility we carry for future generations. From planting trees to educating communities, 
-              we approach each initiative with care, intention, and respect for the earth.
-            </p>
+            <div className="space-y-8 text-center md:text-left">
+              <p className="text-lg leading-relaxed text-[#103713]/80">
+                Initiative by BuildX Interior Product Pvt. Ltd., formed to work actively toward environmental responsibility 
+                alongside the growth of the built environment.
+              </p>
+              <p className="text-lg leading-relaxed text-[#103713]/80">
+                The Trust is driven by a commitment to care for nature through thoughtful action, guided by long-term intent.
+              </p>
+            </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 bg-[#FAFAFA]">
+      {/* Core Focus Areas */}
+      <section className="py-20 bg-[#FFFDF5]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <ScrollReveal>
-              <div>
-                <h2 className="text-3xl mb-6 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Our Mission
-                </h2>
-                <div className="w-12 h-[1px] bg-[#2F6B4F] mb-6" />
-                <p className="text-[#6B6B6B] leading-relaxed">
-                  To restore and protect natural ecosystems through sustainable practices, community 
-                  involvement, and environmental education. We believe in creating lasting change by 
-                  empowering individuals and communities to become guardians of the earth.
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
+              Our Focus Areas
+            </h2>
+            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-16" />
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <ScrollReveal delay={0.1}>
+              <div className="p-8 bg-[#E2DBD0]/20 rounded-2xl border border-[#d1c7bc] h-full flex flex-col">
+                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
+                  Tree Plantation
+                </h3>
+                <p className="text-[#103713]/70 leading-relaxed flex-grow">
+                  Restoring green cover through thoughtful plantation drives and long-term care in collaboration with local communities and NGOs.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div>
-                <h2 className="text-3xl mb-6 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Our Vision
-                </h2>
-                <div className="w-12 h-[1px] bg-[#2F6B4F] mb-6" />
-                <p className="text-[#6B6B6B] leading-relaxed">
-                  A world where humanity lives in harmony with nature. Where forests thrive, water runs clean, 
-                  and communities understand their vital role in preserving the planet. We envision a future 
-                  where environmental consciousness is woven into the fabric of daily life.
+              <div className="p-8 bg-[#E2DBD0]/20 rounded-2xl border border-[#d1c7bc] h-full flex flex-col">
+                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
+                  Waste Management
+                </h3>
+                <p className="text-[#103713]/70 leading-relaxed flex-grow">
+                  Addressing waste generated at corporate interior sites by reducing landfill impact and enabling responsible handling, reuse, upcycling and recycling of materials.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <div className="p-8 bg-[#E2DBD0]/20 rounded-2xl border border-[#d1c7bc] h-full flex flex-col">
+                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
+                  Green Catalogue
+                </h3>
+                <p className="text-[#103713]/70 leading-relaxed flex-grow">
+                  Promoting sustainable and recycled materials to help the industry make conscious, practical choices.
                 </p>
               </div>
             </ScrollReveal>
@@ -114,14 +127,30 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
+      {/* Partnership & Impact Section */}
+      <section className="py-20 bg-[#E2DBD0]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <ScrollReveal>
+            <div className="space-y-8">
+              <p className="text-lg leading-relaxed text-[#103713]/80">
+                Through partnerships with NGOs, industry collaborators, and local stakeholders, BuildX Nature Trust works to restore balance between development and nature.
+              </p>
+              <p className="text-lg leading-relaxed text-[#103713]/80 font-medium">
+                The Trust ensures that as we create spaces, we also give back by protecting, preserving, and sustaining the environment that supports us all.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Team Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FFFDF5]">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Our Team
             </h2>
-            <div className="w-16 h-[1px] bg-[#2F6B4F] mx-auto mb-16" />
+            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-16" />
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -134,48 +163,30 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-[#FAFAFA]">
-        <div className="max-w-4xl mx-auto px-6">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl text-center mb-16 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
-              Our Core Values
-            </h2>
-          </ScrollReveal>
-
-          <div className="space-y-12">
-            <ScrollReveal delay={0.1}>
-              <div>
-                <h3 className="text-2xl mb-3 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Integrity
-                </h3>
-                <p className="text-[#6B6B6B] leading-relaxed">
-                  We operate with transparency and honesty in all our initiatives, ensuring every action 
-                  aligns with our environmental commitments.
+      {/* Mission & Vision */}
+      <section className="py-20 bg-[#FFFDF5]">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <ScrollReveal>
+              <div className="p-10 bg-[#E2DBD0]/30 rounded-3xl border border-[#d1c7bc] h-full flex flex-col">
+                <h2 className="text-3xl mb-6 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
+                  Mission
+                </h2>
+                <div className="w-12 h-[1px] bg-[#628B35] mb-6 shrink-0" />
+                <p className="text-[#103713]/70 text-lg leading-relaxed flex-grow">
+                  To take simple, consistent actions that support nature through plantation, waste management, and mindful choices that create real change on the ground.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div>
-                <h3 className="text-2xl mb-3 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Sustainability
-                </h3>
-                <p className="text-[#6B6B6B] leading-relaxed">
-                  Long-term thinking guides our work. We focus on solutions that benefit both present and 
-                  future generations.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <div>
-                <h3 className="text-2xl mb-3 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Collaboration
-                </h3>
-                <p className="text-[#6B6B6B] leading-relaxed">
-                  Environmental change requires collective effort. We work alongside communities, 
-                  organizations, and individuals who share our vision.
+              <div className="p-10 bg-[#E2DBD0]/30 rounded-3xl border border-[#d1c7bc] h-full flex flex-col">
+                <h2 className="text-3xl mb-6 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
+                  Vision
+                </h2>
+                <div className="w-12 h-[1px] bg-[#628B35] mb-6 shrink-0" />
+                <p className="text-[#103713]/70 text-lg leading-relaxed flex-grow">
+                  To build a future where caring for the Earth is part of everyday life, and where people, communities, and nature grow together in balance.
                 </p>
               </div>
             </ScrollReveal>

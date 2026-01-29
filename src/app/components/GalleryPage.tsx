@@ -32,16 +32,16 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
   const images = activeTab === 'projects' ? projectImages : volunteerImages;
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 bg-[#E2DBD0]">
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#E2DBD0]">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-6xl text-center mb-8 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h1 className="text-4xl md:text-6xl text-center mb-8 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Gallery
             </h1>
-            <div className="w-16 h-[1px] bg-[#2F6B4F] mx-auto mb-12" />
-            <p className="text-lg text-center leading-relaxed text-[#6B6B6B]">
+            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-12" />
+            <p className="text-lg text-center leading-relaxed text-[#103713]/80">
               Moments from our journey—people planting hope, communities taking action, 
               and nature reclaiming its rightful space.
             </p>
@@ -50,30 +50,30 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
       </section>
 
       {/* Tabs */}
-      <section className="pb-20 bg-white">
+      <section className="pb-20 bg-[#E2DBD0]">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
             <div className="flex justify-center gap-8 mb-12">
               <button
                 onClick={() => setActiveTab('projects')}
-                className={`relative pb-2 text-lg transition-colors ${
-                  activeTab === 'projects' ? 'text-[#2F6B4F]' : 'text-[#6B6B6B] hover:text-[#2F6B4F]'
+                className={`relative pb-2 text-lg transition-colors font-medium ${
+                  activeTab === 'projects' ? 'text-[#103713]' : 'text-[#628B35]/60 hover:text-[#103713]'
                 }`}
               >
                 Projects
                 {activeTab === 'projects' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#2F6B4F]" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#628B35]" />
                 )}
               </button>
               <button
                 onClick={() => setActiveTab('volunteers')}
-                className={`relative pb-2 text-lg transition-colors ${
-                  activeTab === 'volunteers' ? 'text-[#2F6B4F]' : 'text-[#6B6B6B] hover:text-[#2F6B4F]'
+                className={`relative pb-2 text-lg transition-colors font-medium ${
+                  activeTab === 'volunteers' ? 'text-[#103713]' : 'text-[#628B35]/60 hover:text-[#103713]'
                 }`}
               >
                 Volunteers
                 {activeTab === 'volunteers' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#2F6B4F]" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#628B35]" />
                 )}
               </button>
             </div>

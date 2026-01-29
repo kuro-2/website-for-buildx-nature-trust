@@ -12,17 +12,17 @@ function CityGallery({ cityName, images }: CityGalleryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-[#E5E5E5] overflow-hidden">
+    <div className="border border-[#d1c7bc] overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 flex items-center justify-between bg-white hover:bg-[#FAFAFA] transition-colors"
+        className="w-full px-6 py-4 flex items-center justify-between bg-[#FFFDF5] hover:bg-[#FAFAFA] transition-colors"
       >
-        <span className="text-lg text-[#1C1C1C]">{cityName}</span>
+        <span className="text-lg text-[#103713]">{cityName}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <ChevronDown className="text-[#2F6B4F]" />
+          <ChevronDown className="text-[#628B35]" />
         </motion.div>
       </button>
 
@@ -35,7 +35,7 @@ function CityGallery({ cityName, images }: CityGalleryProps) {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 bg-[#FAFAFA]">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 bg-[#FFFDF5]">
               {images.map((image, index) => (
                 <div key={index} className="aspect-square overflow-hidden group">
                   <img
@@ -111,16 +111,16 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
   ];
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 bg-[#E2DBD0]">
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#E2DBD0]">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-6xl text-center mb-8 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h1 className="text-4xl md:text-6xl text-center mb-8 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Our Programs
             </h1>
-            <div className="w-16 h-[1px] bg-[#2F6B4F] mx-auto mb-12" />
-            <p className="text-lg text-center leading-relaxed text-[#6B6B6B]">
+            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-12" />
+            <p className="text-lg text-center leading-relaxed text-[#103713]/80">
               Through targeted initiatives and community partnerships, we're creating lasting environmental impact across multiple cities.
             </p>
           </ScrollReveal>
@@ -128,14 +128,14 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
       </section>
 
       {/* Tree Plantation Program */}
-      <section className="py-20 bg-[#FAFAFA]">
+      <section className="py-20 bg-[#FFFDF5]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Tree Plantation
             </h2>
-            <div className="w-16 h-[1px] bg-[#2F6B4F] mx-auto mb-12" />
-            <p className="text-center text-[#6B6B6B] mb-16 max-w-3xl mx-auto">
+            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-12" />
+            <p className="text-center text-[#103713]/70 mb-16 max-w-3xl mx-auto">
               Our tree plantation drives are creating urban forests across Karnataka, improving air quality 
               and providing green spaces for communities to thrive.
             </p>
@@ -156,16 +156,16 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
       </section>
 
       {/* Waste Management */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#E2DBD0]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Waste Management
             </h2>
-            <div className="w-16 h-[1px] bg-[#2F6B4F] mx-auto mb-8" />
-            <div className="inline-block px-8 py-16 border-2 border-[#E5E5E5]">
-              <p className="text-xl text-[#9A9A9A]">In Process</p>
-              <p className="text-sm text-[#9A9A9A] mt-4">
+            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-8" />
+            <div className="inline-block px-8 py-16 border-2 border-[#d1c7bc] bg-[#FFFDF5]">
+              <p className="text-xl text-[#628B35]">In Process</p>
+              <p className="text-sm text-[#103713]/70 mt-4">
                 We're developing comprehensive waste management solutions. Stay tuned.
               </p>
             </div>
@@ -174,26 +174,26 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
       </section>
 
       {/* Our Focus Areas */}
-      <section className="py-20 bg-[#FAFAFA]">
+      <section className="py-20 bg-[#FFFDF5]">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Our Focus
             </h2>
-            <div className="w-16 h-[1px] bg-[#2F6B4F] mx-auto mb-16" />
+            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-16" />
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (
               <ScrollReveal key={area.title} delay={index * 0.1}>
-                <div className="p-8 bg-white border border-[#E5E5E5] hover:border-[#2F6B4F] transition-colors group">
-                  <div className="text-[#2F6B4F] mb-6 transition-transform group-hover:scale-110 duration-300">
+                <div className="p-8 bg-[#FFFDF5] border border-[#d1c7bc] hover:border-[#628B35] transition-colors group h-full flex flex-col">
+                  <div className="text-[#628B35] mb-6 transition-transform group-hover:scale-110 duration-300 shrink-0">
                     {area.icon}
                   </div>
-                  <h3 className="text-2xl mb-4 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+                  <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
                     {area.title}
                   </h3>
-                  <p className="text-[#6B6B6B] leading-relaxed">{area.description}</p>
+                  <p className="text-[#103713]/70 leading-relaxed flex-grow">{area.description}</p>
                 </div>
               </ScrollReveal>
             ))}

@@ -13,7 +13,7 @@ export function Footer({ onNavigate }: FooterProps) {
   ];
 
   return (
-    <footer className="relative bg-[#F5F5F5] border-t border-[#E5E5E5] overflow-hidden" style={{ minHeight: '200px' }}>
+    <footer className="relative bg-[#E2DBD0] border-t border-[#d1c7bc] overflow-hidden" style={{ minHeight: '200px' }}>
       {/* Parallax Forest Background */}
       <div className="parallax-container">
         {/* Distant Tree Layer - Slowest and lightest */}
@@ -40,23 +40,23 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl mb-3 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h3 className="text-2xl mb-3 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               BuildX Nature Trust
             </h3>
-            <p className="text-sm text-[#6B6B6B] leading-relaxed">
+            <p className="text-sm text-[#103713]/80 leading-relaxed">
               Nurturing the earth, one action at a time.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-3 text-[#1C1C1C]">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-[#6B6B6B]">
+            <h4 className="mb-3 text-[#103713] font-medium">Quick Links</h4>
+            <ul className="space-y-2 text-sm text-[#103713]/70">
               {quickLinks.map((link) => (
                 <li key={link.page}>
                   <button 
                     onClick={() => onNavigate?.(link.page)}
-                    className="hover:text-[#2F6B4F] transition-colors"
+                    className="hover:text-[#628B35] transition-colors"
                   >
                     {link.label}
                   </button>
@@ -67,21 +67,21 @@ export function Footer({ onNavigate }: FooterProps) {
 
           {/* Social */}
           <div>
-            <h4 className="mb-3 text-[#1C1C1C]">Connect</h4>
+            <h4 className="mb-3 text-[#103713] font-medium">Connect</h4>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/buildx_nature_trust/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#6B6B6B] hover:text-[#2F6B4F] transition-colors"
+                className="text-[#103713]/70 hover:text-[#628B35] transition-colors"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/buildx-interior-products-private-limited/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#6B6B6B] hover:text-[#2F6B4F] transition-colors"
+                className="text-[#103713]/70 hover:text-[#628B35] transition-colors"
               >
                 <Linkedin size={20} />
               </a>
@@ -89,7 +89,7 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-[#E5E5E5] text-center text-sm text-[#1f1f1f]">
+        <div className="mt-8 pt-8 border-t border-[#d1c7bc] text-center text-sm text-[#103713]/60">
           © 2026 BuildX Nature Trust. All rights reserved.
         </div>
       </div>

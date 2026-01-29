@@ -3,52 +3,52 @@
 :root {
   --font-size: 16px;
   
-  /* BuildX Nature Trust Color System */
-  --nature-green: #2F6B4F;
-  --nature-green-light: #3D8262;
-  --nature-green-dark: #234F3A;
+  /* BuildX Nature Trust Color System - Refactored Palette */
+  --nature-green: #103713;       /* Phthalo Green */
+  --nature-green-light: #628B35; /* Maximum Green */
+  --nature-green-dark: #0a240c;
   --charcoal: #1C1C1C;
   --gray-dark: #6B6B6B;
   --gray-light: #9A9A9A;
-  --white: #FFFFFF;
+  --white: #FFFDF5;              /* Milk */
   
-  --background: #ffffff;
-  --foreground: #1C1C1C;
-  --card: #ffffff;
+  --background: #E2DBD0;         /* Bone */
+  --foreground: #103713;         /* Phthalo Green for text headers */
+  --card: #FFFDF5;               /* Milk */
   --card-foreground: #1C1C1C;
-  --popover: #ffffff;
+  --popover: #FFFDF5;            /* Milk */
   --popover-foreground: #1C1C1C;
-  --primary: #2F6B4F;
-  --primary-foreground: #ffffff;
-  --secondary: #F5F5F5;
-  --secondary-foreground: #1C1C1C;
-  --muted: #F5F5F5;
+  --primary: #103713;            /* Phthalo Green */
+  --primary-foreground: #FFFDF5;
+  --secondary: #628B35;          /* Maximum Green */
+  --secondary-foreground: #FFFDF5;
+  --muted: #E2DBD0;              /* Bone */
   --muted-foreground: #6B6B6B;
-  --accent: #2F6B4F;
-  --accent-foreground: #ffffff;
+  --accent: #628B35;             /* Maximum Green */
+  --accent-foreground: #FFFDF5;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
-  --border: #E5E5E5;
+  --border: #d1c7bc;
   --input: transparent;
-  --input-background: #f3f3f5;
+  --input-background: #FFFDF5;   /* Milk */
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #2F6B4F;
-  --chart-1: #2F6B4F;
-  --chart-2: #3D8262;
+  --ring: #628B35;
+  --chart-1: #103713;
+  --chart-2: #628B35;
   --chart-3: #234F3A;
   --chart-4: #6B6B6B;
   --chart-5: #9A9A9A;
   --radius: 0.5rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #1C1C1C;
-  --sidebar-primary: #2F6B4F;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #F5F5F5;
-  --sidebar-accent-foreground: #1C1C1C;
-  --sidebar-border: #E5E5E5;
-  --sidebar-ring: #2F6B4F;
+  --sidebar: #103713;            /* Phthalo Green */
+  --sidebar-foreground: #FFFDF5;
+  --sidebar-primary: #628B35;
+  --sidebar-primary-foreground: #FFFDF5;
+  --sidebar-accent: #628B35;
+  --sidebar-accent-foreground: #FFFDF5;
+  --sidebar-border: #1a4a1e;
+  --sidebar-ring: #628B35;
 }
 
 .dark {
@@ -136,6 +136,22 @@
 
   body {
     @apply bg-background text-foreground;
+    position: relative;
+  }
+
+  /* Global Paper Texture Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 1px 1px, rgba(16, 55, 19, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 100; /* High enough to be visible but below tooltips/modals */
+    opacity: 0.8;
   }
 
   /**
@@ -190,32 +206,10 @@
   }
 }
 
-/* Parallax Forest Footer Animations */
-@keyframes parallaxLayer1 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes parallaxLayer2 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes parallaxLayer3 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Cinematic Parallax Forest Footer Animations */
+@keyframes continuousScroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 .parallax-container {
@@ -224,41 +218,81 @@
   left: 0;
   width: 100%;
   height: 100%;
-  min-height: 200px;
   overflow: hidden;
   z-index: 5;
+  pointer-events: none;
+  /* Subtle top fade to prevent sharp image cuts */
+  mask-image: linear-gradient(to bottom, transparent, black 15%);
+}
+
+.parallax-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 253, 245, 0.4),
+    rgba(255, 253, 245, 0)
+  );
+  pointer-events: none;
+  z-index: 40; /* Above the trees */
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 253, 245, 0.4),
+    rgba(255, 253, 245, 0)
+  );
+  pointer-events: none;
 }
 
 .parallax-layer {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 200%;
   height: 100%;
   background-repeat: repeat-x;
-  background-position: 0 bottom;
-  background-size: 25% auto;
-  display: flex;
-  align-items: flex-end;
-  transform-origin: center;
+  background-position: left bottom;
+  background-size: auto 100%; /* Maintain height to prevent vertical cutting */
+  will-change: transform;
 }
 
 .parallax-layer-1 {
-  animation: parallaxLayer1 80s linear infinite;
-  opacity: 0.3;
+  animation: continuousScroll 180s linear infinite;
+  opacity: 0.15;
+  filter: blur(4px); /* Increased blur to hide seams */
   z-index: 10;
 }
 
 .parallax-layer-2 {
-  animation: parallaxLayer2 60s linear infinite;
-  opacity: 0.5;
+  animation: continuousScroll 140s linear infinite;
+  opacity: 0.35;
+  filter: blur(2px); /* Increased blur to hide seams */
   z-index: 20;
 }
 
 .parallax-layer-3 {
-  animation: parallaxLayer3 40s linear infinite;
-  opacity: 0.8;
+  animation: continuousScroll 100s linear infinite;
+  opacity: 0.55;
   z-index: 30;
+}
+
+.parallax-bg {
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .parallax-bg {
+    background-attachment: fixed;
+  }
 }
 
 .footer-content {

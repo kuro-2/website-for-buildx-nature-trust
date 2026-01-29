@@ -32,13 +32,13 @@ export function Hero() {
   useEffect(() => {
     const phraseInterval = setInterval(() => {
       setCurrentPhraseIndex((prev) => (prev + 1) % animatedPhrases.length);
-    }, 6000); // Match the image transition timing
+    }, 3500); // Original faster timing
 
     return () => clearInterval(phraseInterval);
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-[#1C1C1C]">
+    <div className="relative h-screen w-full overflow-hidden bg-[#103713] hero">
       {/* Background Images */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -61,22 +61,22 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center justify-center px-6">
-        <div className="text-center text-white max-w-4xl">
+        <div className="text-center text-[#FFFDF5] max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             className="mb-8"
           >
-            <h1 className="text-3xl md:text-5xl lg:text-6xl mb-6 leading-tight" style={{ fontFamily: 'Cormorant, serif' }}>
+            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 leading-tight" style={{ fontFamily: 'Cormorant, serif' }}>
               Mother Earth is{' '}
-              <span className="inline-block text-[#90D5B0]">
+              <span className="inline-block text-[#628B35] whitespace-nowrap">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentPhraseIndex}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     className="inline-block"
                   >
@@ -91,7 +91,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-xl md:text-2xl text-white/90 tracking-wide"
+            className="text-xl md:text-2xl text-[#FFFDF5]/90 tracking-wide"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
             The future grows from what we nurture now.

@@ -66,11 +66,11 @@ function CounterItem({ icon, end, label, suffix = '', delay = 0 }: CounterItemPr
       transition={{ duration: 0.8, delay, ease: 'easeOut' }}
       className="flex flex-col items-center text-center"
     >
-      <div className="text-[#2F6B4F] mb-4">{icon}</div>
-      <div className="text-4xl md:text-5xl mb-2 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+      <div className="text-[#628B35] mb-4">{icon}</div>
+      <div className="text-4xl md:text-5xl mb-2 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-sm tracking-wide text-[#6B6B6B] uppercase">{label}</div>
+      <div className="text-sm tracking-wide text-[#103713]/60 uppercase">{label}</div>
     </motion.div>
   );
 }
@@ -87,10 +87,10 @@ function CounterItem({ icon, end, label, suffix = '', delay = 0 }: CounterItemPr
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl mb-4 text-[#1C1C1C]" style={{ fontFamily: 'Cormorant, serif' }}>
+          <h2 className="text-4xl md:text-5xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
             Our Impact
           </h2>
-          <div className="w-16 h-[1px] bg-[#2F6B4F] mx-auto" />
+          <div className="w-16 h-[1px] bg-[#628B35] mx-auto" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
