@@ -13,7 +13,7 @@ export function Footer({ onNavigate }: FooterProps) {
   ];
 
   return (
-    <footer className="relative bg-[#E2DBD0] border-t border-[#d1c7bc] overflow-hidden" style={{ minHeight: '200px' }}>
+    <footer className="relative bg-[#E2DBD0] border-t border-[#d1c7bc] overflow-hidden" style={{ minHeight: '450px' }}>
       {/* Parallax Forest Background */}
       <div className="parallax-container">
         {/* Distant Tree Layer - Slowest and lightest */}
@@ -40,9 +40,13 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl mb-3 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-              BuildX Nature Trust
-            </h3>
+            <div className="flex items-center mb-3">
+              <img 
+                src="public/assets/images/companylogo-footer.png" 
+                alt="BuildX Nature Trust" 
+                className="h-40 w-auto object-contain"
+              />
+            </div>
             <p className="text-sm text-[#103713]/80 leading-relaxed">
               Nurturing the earth, one action at a time.
             </p>

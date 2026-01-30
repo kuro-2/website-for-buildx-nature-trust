@@ -51,15 +51,18 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-[#103713] shadow-md`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-3">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
             onClick={() => onNavigate('home')}
-            className="text-2xl tracking-tight transition-opacity hover:opacity-70 text-[#FFFDF5]"
-            style={{ fontFamily: 'Cormorant, serif' }}
+            className="flex items-center transition-opacity hover:opacity-70"
           >
-            BuildX Nature Trust
+            <img 
+              src="/assets/images/company-logo.png" 
+              alt="BuildX Nature Trust" 
+              className="h-20 md:h-24 w-auto object-contain"
+            />
           </button>
 
           {/* Desktop Navigation */}

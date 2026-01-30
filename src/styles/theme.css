@@ -221,8 +221,8 @@
   overflow: hidden;
   z-index: 5;
   pointer-events: none;
-  /* Subtle top fade to prevent sharp image cuts */
-  mask-image: linear-gradient(to bottom, transparent, black 15%);
+  /* Deep top fade for a misty forest entry */
+  mask-image: linear-gradient(to bottom, transparent, black 40%);
 }
 
 .parallax-container::after {
@@ -231,11 +231,12 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(255, 253, 245, 0.4),
-    rgba(255, 253, 245, 0)
+    rgba(226, 219, 208, 0.6),
+    rgba(226, 219, 208, 0.2) 50%,
+    transparent
   );
   pointer-events: none;
-  z-index: 40; /* Above the trees */
+  z-index: 40; 
 }
 
 .hero::after {
@@ -252,33 +253,34 @@
 
 .parallax-layer {
   position: absolute;
-  bottom: 0;
+  bottom: -5%; /* Let them sit deep */
   left: 0;
   width: 200%;
-  height: 100%;
+  height: 120%; /* Taller than container for a grander scale */
   background-repeat: repeat-x;
   background-position: left bottom;
-  background-size: auto 100%; /* Maintain height to prevent vertical cutting */
+  background-size: auto 100%;
   will-change: transform;
 }
 
 .parallax-layer-1 {
-  animation: continuousScroll 180s linear infinite;
-  opacity: 0.15;
-  filter: blur(4px); /* Increased blur to hide seams */
+  animation: continuousScroll 200s linear infinite;
+  opacity: 0.2;
+  filter: blur(6px) brightness(1.1); /* Hazy distance */
   z-index: 10;
 }
 
 .parallax-layer-2 {
-  animation: continuousScroll 140s linear infinite;
-  opacity: 0.35;
-  filter: blur(2px); /* Increased blur to hide seams */
+  animation: continuousScroll 150s linear infinite;
+  opacity: 0.4;
+  filter: blur(3px);
   z-index: 20;
 }
 
 .parallax-layer-3 {
   animation: continuousScroll 100s linear infinite;
-  opacity: 0.55;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 10px rgba(16, 55, 19, 0.1));
   z-index: 30;
 }
 

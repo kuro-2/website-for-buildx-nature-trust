@@ -68,23 +68,24 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
             className="mb-8"
           >
-            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 leading-tight" style={{ fontFamily: 'Cormorant, serif' }}>
-              Mother Earth is{' '}
-              <span className="inline-block text-[#628B35] whitespace-nowrap">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={currentPhraseIndex}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="inline-block"
-                  >
-                    {animatedPhrases[currentPhraseIndex]}
-                  </motion.span>
-                </AnimatePresence>
-              </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight" style={{ fontFamily: 'Cormorant, serif' }}>
+              Mother Earth is
             </h1>
+            <div className="h-16 md:h-20 lg:h-24 flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentPhraseIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl italic text-[#103713]"
+                  style={{ fontFamily: 'Cormorant, serif' }}
+                >
+                  {animatedPhrases[currentPhraseIndex]}
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </motion.div>
 
           <motion.p

@@ -51,10 +51,10 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       </section>
 
       {/* Form Section */}
-      <section className="py-20 bg-[#E2DBD0]">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-12 md:py-20 bg-[#E2DBD0]">
+        <div className="max-w-4xl mx-auto px-4 md:px-6">
           <ScrollReveal>
-            <div className="bg-[#FFFDF5] p-8 md:p-12 rounded-3xl shadow-sm border border-[#d1c7bc]">
+            <div className="bg-[#FFFDF5] p-6 md:p-12 rounded-2xl md:rounded-3xl shadow-sm border border-[#d1c7bc]">
               {isSubmitted ? (
                 <div className="text-center py-12">
                   <div className="w-20 h-20 bg-[#628B35]/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -151,9 +151,9 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       </section>
 
       {/* Contact Information */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <section className="py-12 md:py-20 bg-[#FFFDF5]">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Phone */}
             <ScrollReveal>
               <div className="text-center md:text-left bg-[#FFFDF5] p-8 rounded-xl shadow-sm border border-[#d1c7bc] h-full flex flex-col items-center md:items-start">
