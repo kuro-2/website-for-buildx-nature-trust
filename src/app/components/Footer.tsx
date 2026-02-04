@@ -42,14 +42,11 @@ export function Footer({ onNavigate }: FooterProps) {
           <div>
             <div className="flex items-center mb-3">
               <img 
-                src="public/assets/images/companylogo-footer.png" 
+                src="/assets/images/X-nobg.svg" 
                 alt="BuildX Nature Trust" 
-                className="h-40 w-auto object-contain"
+                className="h-58 w-auto object-contain"
               />
             </div>
-            <p className="text-sm text-[#103713]/80 leading-relaxed">
-              Nurturing the earth, one action at a time.
-            </p>
           </div>
 
           {/* Quick Links */}

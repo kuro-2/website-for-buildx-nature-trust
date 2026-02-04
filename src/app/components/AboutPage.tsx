@@ -1,4 +1,5 @@
 import { ScrollReveal } from './ScrollReveal';
+import { AboutPageCard } from './ui/AboutPageCard';
 
 interface TeamMember {
   name: string;
@@ -33,19 +34,19 @@ interface AboutPageProps {
 export function AboutPage({ onNavigate }: AboutPageProps) {
   const teamMembers: TeamMember[] = [
     {
-      name: 'Priya Sharma',
-      role: 'Founder & Director',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
+      name: 'Prakash Devegowda',
+      role: 'Director',
+      image: 'public/assets/images/Prakash Devegowda.jpeg',
     },
     {
-      name: 'Arjun Patel',
-      role: 'Program Manager',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop',
+      name: 'Brijesh AC',
+      role: 'Director',
+      image: 'public/assets/images/Brijesh AC.jpeg',
     },
     {
-      name: 'Kavya Reddy',
-      role: 'Community Outreach',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
+      name: 'Prajakta Killekar',
+      role: 'Marketing Executive',
+      image: 'public/assets/images/Prajakta Killekar.png',
     },
     {
       name: 'Rohan Kumar',
@@ -92,35 +93,35 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal delay={0.1}>
-              <div className="p-8 bg-[#E2DBD0]/20 rounded-2xl border border-[#d1c7bc] h-full flex flex-col">
-                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Tree Plantation
-                </h3>
-                <p className="text-[#103713]/70 leading-relaxed flex-grow">
-                  Restoring green cover through thoughtful plantation drives and long-term care in collaboration with local communities and NGOs.
-                </p>
+              <div className="h-96">
+                <AboutPageCard 
+                  title="Tree Plantation"
+                  description="Restoring green cover through thoughtful plantation drives and long-term care in collaboration with local communities and NGOs."
+                  imageUrl="https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop"
+                  altText="Tree plantation drive"
+                />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="p-8 bg-[#E2DBD0]/20 rounded-2xl border border-[#d1c7bc] h-full flex flex-col">
-                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Waste Management
-                </h3>
-                <p className="text-[#103713]/70 leading-relaxed flex-grow">
-                  Addressing waste generated at corporate interior sites by reducing landfill impact and enabling responsible handling, reuse, upcycling and recycling of materials.
-                </p>
+              <div className="h-96">
+                <AboutPageCard 
+                  title="Waste Management"
+                  description="Addressing waste generated at corporate interior sites by reducing landfill impact and enabling responsible handling, reuse, upcycling and recycling of materials."
+                  imageUrl="https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop"
+                  altText="Waste management"
+                />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="p-8 bg-[#E2DBD0]/20 rounded-2xl border border-[#d1c7bc] h-full flex flex-col">
-                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Green Catalogue
-                </h3>
-                <p className="text-[#103713]/70 leading-relaxed flex-grow">
-                  Promoting sustainable and recycled materials to help the industry make conscious, practical choices.
-                </p>
+              <div className="h-96">
+                <AboutPageCard 
+                  title="Green Catalogue"
+                  description="Promoting sustainable and recycled materials to help the industry make conscious, practical choices."
+                  imageUrl="https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop"
+                  altText="Green catalogue"
+                />
               </div>
             </ScrollReveal>
           </div>
@@ -168,26 +169,24 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <ScrollReveal>
-              <div className="p-10 bg-[#E2DBD0]/30 rounded-3xl border border-[#d1c7bc] h-full flex flex-col">
-                <h2 className="text-3xl mb-6 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Mission
-                </h2>
-                <div className="w-12 h-[1px] bg-[#628B35] mb-6 shrink-0" />
-                <p className="text-[#103713]/70 text-lg leading-relaxed flex-grow">
-                  To take simple, consistent actions that support nature through plantation, waste management, and mindful choices that create real change on the ground.
-                </p>
+              <div className="h-96">
+                <AboutPageCard 
+                  title="Mission"
+                  description="To take simple, consistent actions that support nature through plantation, waste management, and mindful choices that create real change on the ground."
+                  imageUrl="https://images.unsplash.com/photo-1656783208368-a7d176736535?w=400&h=400&fit=crop"
+                  altText="Nature mission"
+                />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="p-10 bg-[#E2DBD0]/30 rounded-3xl border border-[#d1c7bc] h-full flex flex-col">
-                <h2 className="text-3xl mb-6 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Vision
-                </h2>
-                <div className="w-12 h-[1px] bg-[#628B35] mb-6 shrink-0" />
-                <p className="text-[#103713]/70 text-lg leading-relaxed flex-grow">
-                  To build a future where caring for the Earth is part of everyday life, and where people, communities, and nature grow together in balance.
-                </p>
+              <div className="h-96">
+                <AboutPageCard 
+                  title="Vision"
+                  description="To build a future where caring for the Earth is part of everyday life, and where people, communities, and nature grow together in balance."
+                  imageUrl="https://images.unsplash.com/photo-1650793889985-2090d35deb66?w=400&h=400&fit=crop"
+                  altText="Environmental vision"
+                />
               </div>
             </ScrollReveal>
           </div>

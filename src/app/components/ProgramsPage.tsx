@@ -2,13 +2,20 @@ import { useState } from 'react';
 import { ScrollReveal } from './ScrollReveal';
 import { Sprout, Droplets, Recycle, Users, BookOpen, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { HoverCard } from './ui/HoverCard';
+import { ProgramsPageCard } from './ui/ProgramsPageCard';
 
 interface CityGalleryProps {
   cityName: string;
   images: string[];
+  imageDetails?: Array<{
+    title: string;
+    description: string;
+    alt: string;
+  }>;
 }
 
-function CityGallery({ cityName, images }: CityGalleryProps) {
+function CityGallery({ cityName, images, imageDetails }: CityGalleryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -36,15 +43,32 @@ function CityGallery({ cityName, images }: CityGalleryProps) {
             className="overflow-hidden"
           >
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 bg-[#FFFDF5]">
-              {images.map((image, index) => (
-                <div key={index} className="aspect-square overflow-hidden group">
-                  <img
-                    src={image}
-                    alt={`${cityName} project ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              ))}
+              {images.map((image, index) => {
+                // Check if we have image details to show interactive cards
+                if (imageDetails && imageDetails[index]) {
+                  const detail = imageDetails[index];
+                  return (
+                    <HoverCard 
+                      key={index}
+                      image={image}
+                      title={detail.title}
+                      description={detail.description}
+                      altText={detail.alt || `${cityName} project ${index + 1}`}
+                    />
+                  );
+                } else {
+                  // Fallback to regular image if no details provided
+                  return (
+                    <div key={index} className="aspect-square overflow-hidden group">
+                      <img
+                        src={image}
+                        alt={`${cityName} project ${index + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  );
+                }
+              })}
             </div>
           </motion.div>
         )}
@@ -66,12 +90,68 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
     'https://images.unsplash.com/photo-1642265466368-2a491569308a?w=400&h=400&fit=crop',
     'https://images.unsplash.com/photo-1758599668125-e154250f24bd?w=400&h=400&fit=crop',
   ];
+  
+  const bangaloreImageDetails = [
+    {
+      title: "Urban Forest",
+      description: "Creating green spaces in the heart of Bangalore with native species.",
+      alt: "Bangalore urban forest plantation"
+    },
+    {
+      title: "Community Park",
+      description: "Developing community green spaces for recreation and biodiversity.",
+      alt: "Bangalore community park project"
+    },
+    {
+      title: "School Garden",
+      description: "Educational gardens at schools to teach children about sustainability.",
+      alt: "Bangalore school garden initiative"
+    },
+    {
+      title: "Rooftop Garden",
+      description: "Transforming unused rooftops into productive green spaces.",
+      alt: "Bangalore rooftop garden project"
+    },
+    {
+      title: "Street Greening",
+      description: "Adding trees and plants along streets to improve air quality.",
+      alt: "Bangalore street greening project"
+    },
+    {
+      title: "Waste to Wealth",
+      description: "Converting organic waste into compost for urban gardening.",
+      alt: "Bangalore waste to wealth project"
+    }
+  ];
 
   const gularbaImages = [
     'https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop',
     'https://images.unsplash.com/photo-1656783208368-a7d176736535?w=400&h=400&fit=crop',
     'https://images.unsplash.com/photo-1650793889985-2090d35deb66?w=400&h=400&fit=crop',
     'https://images.unsplash.com/photo-1642265466368-2a491569308a?w=400&h=400&fit=crop',
+  ];
+  
+  const gularbaImageDetails = [
+    {
+      title: "Industrial Green Belt",
+      description: "Establishing green barriers around industrial areas.",
+      alt: "Gulbarga industrial green belt project"
+    },
+    {
+      title: "Water Conservation",
+      description: "Planting drought-resistant species to conserve water.",
+      alt: "Gulbarga water conservation project"
+    },
+    {
+      title: "Agricultural Forestry",
+      description: "Integrating trees with farming for sustainable agriculture.",
+      alt: "Gulbarga agricultural forestry project"
+    },
+    {
+      title: "Desert Restoration",
+      description: "Restoring degraded land in semi-arid regions.",
+      alt: "Gulbarga desert restoration project"
+    }
   ];
 
   const mysuruImages = [
@@ -81,17 +161,50 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
     'https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop',
     'https://images.unsplash.com/photo-1642265466368-2a491569308a?w=400&h=400&fit=crop',
   ];
+  
+  const mysuruImageDetails = [
+    {
+      title: "Heritage Gardens",
+      description: "Preserving traditional garden designs with native plants.",
+      alt: "Mysuru heritage garden project"
+    },
+    {
+      title: "River Restoration",
+      description: "Planting along riverbanks to prevent erosion and pollution.",
+      alt: "Mysuru river restoration project"
+    },
+    {
+      title: "Temple Grounds",
+      description: "Greening temple premises with sacred groves and trees.",
+      alt: "Mysuru temple grounds greening"
+    },
+    {
+      title: "Urban Forest",
+      description: "Creating contiguous forest patches in urban areas.",
+      alt: "Mysuru urban forest project"
+    },
+    {
+      title: "Biodiversity Corridor",
+      description: "Connecting fragmented habitats for wildlife movement.",
+      alt: "Mysuru biodiversity corridor"
+    }
+  ];
+
+  const getFocusAreaImage = (title: string) => {
+    const imageMap: Record<string, string> = {
+      'Plantation': 'https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop',
+      'Interior Waste Management': 'https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop',
+      'Community Action': 'https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop',
+      'Knowledge & Awareness': 'https://images.unsplash.com/photo-1656783208368-a7d176736535?w=400&h=400&fit=crop'
+    };
+    return imageMap[title] || 'https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop';
+  };
 
   const focusAreas = [
     {
       icon: <Sprout size={40} strokeWidth={1.5} />,
       title: 'Plantation',
       description: 'Strategic tree planting initiatives to restore green cover and combat climate change.',
-    },
-    {
-      icon: <Droplets size={40} strokeWidth={1.5} />,
-      title: 'Soil and Water Care',
-      description: 'Conservation programs to protect soil health and water resources for future generations.',
     },
     {
       icon: <Recycle size={40} strokeWidth={1.5} />,
@@ -143,13 +256,13 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
 
           <div className="space-y-6">
             <ScrollReveal delay={0.1}>
-              <CityGallery cityName="Bangalore" images={bangaloreImages} />
+              <CityGallery cityName="Bangalore" images={bangaloreImages} imageDetails={bangaloreImageDetails} />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <CityGallery cityName="Gulbarga" images={gularbaImages} />
+              <CityGallery cityName="Gulbarga" images={gularbaImages} imageDetails={gularbaImageDetails} />
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <CityGallery cityName="Mysuru" images={mysuruImages} />
+              <CityGallery cityName="Mysuru" images={mysuruImages} imageDetails={mysuruImageDetails} />
             </ScrollReveal>
           </div>
         </div>
@@ -186,14 +299,13 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (
               <ScrollReveal key={area.title} delay={index * 0.1}>
-                <div className="p-8 bg-[#FFFDF5] border border-[#d1c7bc] hover:border-[#628B35] transition-colors group h-full flex flex-col">
-                  <div className="text-[#628B35] mb-6 transition-transform group-hover:scale-110 duration-300 shrink-0">
-                    {area.icon}
-                  </div>
-                  <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                    {area.title}
-                  </h3>
-                  <p className="text-[#103713]/70 leading-relaxed flex-grow">{area.description}</p>
+                <div className="h-96">
+                  <ProgramsPageCard 
+                    title={area.title}
+                    description={area.description}
+                    imageUrl={getFocusAreaImage(area.title)}
+                    altText={`Focus area: ${area.title}`}
+                  />
                 </div>
               </ScrollReveal>
             ))}

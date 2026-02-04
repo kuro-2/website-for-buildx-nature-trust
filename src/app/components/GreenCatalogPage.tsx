@@ -1,5 +1,6 @@
 import { ScrollReveal } from './ScrollReveal';
 import { Package } from 'lucide-react';
+import { GreenCatalogCard } from './ui/GreenCatalogCard';
 
 interface GreenCatalogPageProps {
   onNavigate?: (page: string) => void;
@@ -45,36 +46,35 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal delay={0.1}>
-              <div className="p-8 bg-[#FFFDF5] border border-[#d1c7bc] hover:border-[#628B35] transition-colors rounded-xl h-full flex flex-col">
-                <h3 className="text-xl mb-3 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Sustainable Products
-                </h3>
-                <p className="text-[#103713]/70 flex-grow">
-                  Eco-friendly alternatives for everyday items, from biodegradable packaging to 
-                  renewable energy solutions.
-                </p>
+              <div className="h-96">
+                <GreenCatalogCard 
+                  title="Sustainable Products"
+                  description="Eco-friendly alternatives for everyday items, from biodegradable packaging to renewable energy solutions."
+                  imageUrl="https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop"
+                  altText="Sustainable products"
+                />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="p-8 bg-[#FFFDF5] border border-[#d1c7bc] hover:border-[#628B35] transition-colors rounded-xl h-full flex flex-col">
-                <h3 className="text-xl mb-3 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Native Plant Seeds
-                </h3>
-                <p className="text-[#103713]/70 flex-grow">
-                  Carefully selected native species to support local biodiversity and ecosystem health.
-                </p>
+              <div className="h-96">
+                <GreenCatalogCard 
+                  title="Native Plant Seeds"
+                  description="Carefully selected native species to support local biodiversity and ecosystem health."
+                  imageUrl="https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop"
+                  altText="Native plant seeds"
+                />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="p-8 bg-[#FFFDF5] border border-[#d1c7bc] hover:border-[#628B35] transition-colors rounded-xl h-full flex flex-col">
-                <h3 className="text-xl mb-3 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Educational Resources
-                </h3>
-                <p className="text-[#103713]/70 flex-grow">
-                  Guides and materials to help individuals and communities make informed environmental choices.
-                </p>
+              <div className="h-96">
+                <GreenCatalogCard 
+                  title="Educational Resources"
+                  description="Guides and materials to help individuals and communities make informed environmental choices."
+                  imageUrl="https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop"
+                  altText="Educational resources"
+                />
               </div>
             </ScrollReveal>
           </div>

@@ -51,7 +51,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-[#103713] shadow-md`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-3">
+      <div className="max-w-7xl mx-auto pl-0 py-3">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
@@ -59,9 +59,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             className="flex items-center transition-opacity hover:opacity-70"
           >
             <img 
-              src="/assets/images/company-logo.png" 
+              src="/assets/images/X-nobg.svg" 
               alt="BuildX Nature Trust" 
-              className="h-20 md:h-24 w-auto object-contain"
+              className="h-40 md:h-45 w-auto object-contain"
             />
           </button>
 

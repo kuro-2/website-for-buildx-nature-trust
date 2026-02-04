@@ -2,6 +2,7 @@ import { Hero } from './Hero';
 // import { ImpactCounter } from './ImpactCounter';
 import { ScrollReveal } from './ScrollReveal';
 import { ArrowRight } from 'lucide-react';
+import { HomePageCard } from './ui/HomePageCard';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -49,38 +50,35 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <ScrollReveal delay={0.1}>
-              <div className="text-center bg-[#FFFDF5] p-8 rounded-xl shadow-sm border border-[#d1c7bc] h-full flex flex-col">
-                <div className="w-12 h-[1px] bg-[#628B35] mx-auto mb-6 shrink-0" />
-                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Responsibility
-                </h3>
-                <p className="text-[#103713]/70 leading-relaxed flex-grow">
-                  We take ownership of our impact and commit to sustainable practices that honor the earth.
-                </p>
+              <div className="h-96">
+                <HomePageCard 
+                  title="Responsibility"
+                  description="We take ownership of our impact and commit to sustainable practices that honor the earth."
+                  imageUrl="https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop"
+                  altText="Environmental responsibility and sustainability"
+                />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="text-center bg-[#FFFDF5] p-8 rounded-xl shadow-sm border border-[#d1c7bc] h-full flex flex-col">
-                <div className="w-12 h-[1px] bg-[#628B35] mx-auto mb-6 shrink-0" />
-                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Community
-                </h3>
-                <p className="text-[#103713]/70 leading-relaxed flex-grow">
-                  Real change happens together. We build networks of people who care and act.
-                </p>
+              <div className="h-96">
+                <HomePageCard 
+                  title="Community"
+                  description="Real change happens together. We build networks of people who care and act."
+                  imageUrl="https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop"
+                  altText="Community environmental action"
+                />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="text-center bg-[#FFFDF5] p-8 rounded-xl shadow-sm border border-[#d1c7bc] h-full flex flex-col">
-                <div className="w-12 h-[1px] bg-[#628B35] mx-auto mb-6 shrink-0" />
-                <h3 className="text-2xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-                  Hope
-                </h3>
-                <p className="text-[#103713]/70 leading-relaxed flex-grow">
-                  Every seed planted is a promise. We believe in a future where nature and humanity thrive.
-                </p>
+              <div className="h-96">
+                <HomePageCard 
+                  title="Hope"
+                  description="Every seed planted is a promise. We believe in a future where nature and humanity thrive."
+                  imageUrl="https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop"
+                  altText="Hope for a greener future"
+                />
               </div>
             </ScrollReveal>
           </div>
