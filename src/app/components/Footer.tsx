@@ -40,7 +40,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center mb-3">
+            <div className="flex items-center mb-1 mt-">
               <img 
                 src="/assets/images/X-nobg.svg" 
                 alt="BuildX Nature Trust" 

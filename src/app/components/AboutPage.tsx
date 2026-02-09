@@ -36,17 +36,17 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
     {
       name: 'Prakash Devegowda',
       role: 'Director',
-      image: 'public/assets/images/Prakash Devegowda.jpeg',
+      image: '/assets/images/Prakash Devegowda.jpeg',
     },
     {
       name: 'Brijesh AC',
       role: 'Director',
-      image: 'public/assets/images/Brijesh AC.jpeg',
+      image: '/assets/images/Brijesh AC.jpeg',
     },
     {
       name: 'Prajakta Killekar',
       role: 'Marketing Executive',
-      image: 'public/assets/images/Prajakta Killekar.png',
+      image: '/assets/images/Prajakta Killekar.png',
     },
     {
       name: 'Rohan Kumar',
