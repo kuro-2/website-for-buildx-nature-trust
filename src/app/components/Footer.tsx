@@ -44,9 +44,9 @@ export function Footer({ onNavigate }: FooterProps) {
               alt="BuildX Nature Trust"
               className="
                 absolute
-                -top-20
-                -left-12
-                h-60
+                -top-30
+                -left-20
+                h-80
                 w-auto
                 object-contain
                 z-50
@@ -95,7 +95,7 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-[#d1c7bc] text-center text-sm text-[#103713]/60">
+        <div className="mt-20 pt-8 border-t border-[#d1c7bc] text-center text-sm text-[#103713]/60">
           © 2026 BuildX Nature Trust. All rights reserved.
         </div>
       </div>
