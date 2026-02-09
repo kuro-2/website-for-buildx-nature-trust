@@ -2,20 +2,14 @@ import { useState } from 'react';
 import { ScrollReveal } from './ScrollReveal';
 import { Sprout, Droplets, Recycle, Users, BookOpen, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { HoverCard } from './ui/HoverCard';
 import { ProgramsPageCard } from './ui/ProgramsPageCard';
 
 interface CityGalleryProps {
   cityName: string;
   images: string[];
-  imageDetails?: Array<{
-    title: string;
-    description: string;
-    alt: string;
-  }>;
 }
 
-function CityGallery({ cityName, images, imageDetails }: CityGalleryProps) {
+function CityGallery({ cityName, images }: CityGalleryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -43,32 +37,15 @@ function CityGallery({ cityName, images, imageDetails }: CityGalleryProps) {
             className="overflow-hidden"
           >
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 bg-[#FFFDF5]">
-              {images.map((image, index) => {
-                // Check if we have image details to show interactive cards
-                if (imageDetails && imageDetails[index]) {
-                  const detail = imageDetails[index];
-                  return (
-                    <HoverCard 
-                      key={index}
-                      image={image}
-                      title={detail.title}
-                      description={detail.description}
-                      altText={detail.alt || `${cityName} project ${index + 1}`}
-                    />
-                  );
-                } else {
-                  // Fallback to regular image if no details provided
-                  return (
-                    <div key={index} className="aspect-square overflow-hidden group">
-                      <img
-                        src={image}
-                        alt={`${cityName} project ${index + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  );
-                }
-              })}
+              {images.map((image, index) => (
+                <div key={index} className="aspect-square overflow-hidden">
+                  <img
+                    src={image}
+                    alt={`${cityName} project ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </motion.div>
         )}
@@ -83,110 +60,402 @@ interface ProgramsPageProps {
 
 export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
   const bangaloreImages = [
-    'https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1656783208368-a7d176736535?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1650793889985-2090d35deb66?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1642265466368-2a491569308a?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1758599668125-e154250f24bd?w=400&h=400&fit=crop',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6778.jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6788 (1).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6801 (1).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6807.jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6812 (1).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6814.jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6821.jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6858 (2).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6866 (3).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6867 (1).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6869.jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6875 (3).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6881 (3).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6892.jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6895 (2).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6896 (2).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6897 (2).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6899.jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6903 (3).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6917 (3).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6921.jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6930 (1).jpeg',
+    '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6957 (2).jpeg',
   ];
   
   const bangaloreImageDetails = [
     {
-      title: "Urban Forest",
-      description: "Creating green spaces in the heart of Bangalore with native species.",
-      alt: "Bangalore urban forest plantation"
+      title: "School Plantation Drive",
+      description: "Government school students participating in tree plantation and environmental awareness.",
+      alt: "Bangalore govt school plantation drive - students planting trees"
     },
     {
-      title: "Community Park",
-      description: "Developing community green spaces for recreation and biodiversity.",
-      alt: "Bangalore community park project"
+      title: "Community Engagement",
+      description: "Local community members actively involved in the greening initiative.",
+      alt: "Bangalore school plantation - community participation"
     },
     {
-      title: "School Garden",
-      description: "Educational gardens at schools to teach children about sustainability.",
-      alt: "Bangalore school garden initiative"
+      title: "Youth Awareness",
+      description: "Educating young minds about the importance of environmental conservation.",
+      alt: "Bangalore plantation drive - student awareness program"
     },
     {
-      title: "Rooftop Garden",
-      description: "Transforming unused rooftops into productive green spaces.",
-      alt: "Bangalore rooftop garden project"
+      title: "Tree Planting Activity",
+      description: "Hands-on tree planting experience for school children.",
+      alt: "Bangalore school - tree planting activity"
     },
     {
-      title: "Street Greening",
-      description: "Adding trees and plants along streets to improve air quality.",
-      alt: "Bangalore street greening project"
+      title: "Environmental Education",
+      description: "Teaching sustainable practices through practical involvement.",
+      alt: "Bangalore govt school - environmental education"
     },
     {
-      title: "Waste to Wealth",
-      description: "Converting organic waste into compost for urban gardening.",
-      alt: "Bangalore waste to wealth project"
+      title: "Green Initiative",
+      description: "Transforming school grounds into green learning spaces.",
+      alt: "Bangalore plantation - green school initiative"
+    },
+    {
+      title: "Student Participation",
+      description: "Enthusiastic students contributing to the plantation drive.",
+      alt: "Bangalore school - student tree planting"
+    },
+    {
+      title: "Community Support",
+      description: "Building community awareness through collaborative action.",
+      alt: "Bangalore plantation - community and students together"
+    },
+    {
+      title: "Sapling Distribution",
+      description: "Distributing saplings to students for the plantation drive.",
+      alt: "Bangalore school - sapling distribution event"
+    },
+    {
+      title: "Team Effort",
+      description: "Students and volunteers working together for a greener future.",
+      alt: "Bangalore plantation - teamwork and collaboration"
+    },
+    {
+      title: "School Grounds Greening",
+      description: "Enhancing school infrastructure with green cover.",
+      alt: "Bangalore govt school - grounds transformation"
+    },
+    {
+      title: "Awareness Campaign",
+      description: "Spreading environmental consciousness among young students.",
+      alt: "Bangalore school - environmental awareness campaign"
+    },
+    {
+      title: "Hands-On Learning",
+      description: "Practical learning experience about ecology and sustainability.",
+      alt: "Bangalore plantation - practical environmental education"
+    },
+    {
+      title: "Group Activity",
+      description: "Students collaborating in the plantation initiative.",
+      alt: "Bangalore school - group plantation activity"
+    },
+    {
+      title: "Green Mission",
+      description: "School's commitment to environmental responsibility.",
+      alt: "Bangalore govt school - green mission project"
+    },
+    {
+      title: "Planting Together",
+      description: "Students learning the value of collective environmental action.",
+      alt: "Bangalore plantation - students planting together"
+    },
+    {
+      title: "Future Stewards",
+      description: "Nurturing the next generation of environmental stewards.",
+      alt: "Bangalore school - future environmental leaders"
+    },
+    {
+      title: "School Engagement",
+      description: "Active participation from the entire school community.",
+      alt: "Bangalore plantation - school-wide engagement"
+    },
+    {
+      title: "Green Education",
+      description: "Integrating environmental values into education.",
+      alt: "Bangalore govt school - green education program"
+    },
+    {
+      title: "Plantation Success",
+      description: "Successful completion of the school plantation drive.",
+      alt: "Bangalore school - successful plantation event"
+    },
+    {
+      title: "Community Impact",
+      description: "Creating lasting impact through community-school partnership.",
+      alt: "Bangalore plantation - community impact"
+    },
+    {
+      title: "Youth Leadership",
+      description: "Empowering students to lead environmental initiatives.",
+      alt: "Bangalore school - youth environmental leadership"
+    },
+    {
+      title: "Sustainable Future",
+      description: "Building a sustainable future through education and action.",
+      alt: "Bangalore govt school - sustainable future initiative"
     }
   ];
 
   const gularbaImages = [
-    'https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1656783208368-a7d176736535?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1650793889985-2090d35deb66?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1642265466368-2a491569308a?w=400&h=400&fit=crop',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5730 (1).jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5736.jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5745 (2).jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5748.jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5751.jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5755.jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5815.jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5827 (1).jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5831.jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5865 (1).jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5879.jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5917 (1).jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5935.jpeg',
+    '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/WhatsApp Image 2025-09-12 at 6.29.03 PM (2).jpeg',
   ];
   
   const gularbaImageDetails = [
     {
-      title: "Industrial Green Belt",
-      description: "Establishing green barriers around industrial areas.",
-      alt: "Gulbarga industrial green belt project"
+      title: "Kalyana Vana Plantation",
+      description: "Large-scale tree plantation initiative at Kalyana Vana forest area.",
+      alt: "Gulbarga Kalyana Vana plantation drive"
     },
     {
-      title: "Water Conservation",
-      description: "Planting drought-resistant species to conserve water.",
-      alt: "Gulbarga water conservation project"
+      title: "Community Mobilization",
+      description: "Local community members gathering for the plantation drive.",
+      alt: "Gulbarga plantation - community participation"
     },
     {
-      title: "Agricultural Forestry",
-      description: "Integrating trees with farming for sustainable agriculture.",
-      alt: "Gulbarga agricultural forestry project"
+      title: "Forest Restoration",
+      description: "Restoring native forest cover in the Kalyana Vana region.",
+      alt: "Gulbarga Kalyana Vana forest restoration"
     },
     {
-      title: "Desert Restoration",
-      description: "Restoring degraded land in semi-arid regions.",
-      alt: "Gulbarga desert restoration project"
+      title: "Tree Sapling Distribution",
+      description: "Distributing saplings to volunteers for plantation.",
+      alt: "Gulbarga plantation - sapling distribution"
+    },
+    {
+      title: "Planting in Action",
+      description: "Volunteers actively planting trees across the Kalyana Vana area.",
+      alt: "Gulbarga Kalyana Vana - tree planting activity"
+    },
+    {
+      title: "Group Participation",
+      description: "Team members working together in the plantation drive.",
+      alt: "Gulbarga plantation - group activity"
+    },
+    {
+      title: "Native Species Planting",
+      description: "Planting native tree species suitable for the region.",
+      alt: "Gulbarga Kalyana Vana - native species plantation"
+    },
+    {
+      title: "Volunteer Engagement",
+      description: "Dedicated volunteers contributing to the green mission.",
+      alt: "Gulbarga plantation - volunteer engagement"
+    },
+    {
+      title: "Land Preparation",
+      description: "Preparing the land for successful tree plantation.",
+      alt: "Gulbarga Kalyana Vana - land preparation"
+    },
+    {
+      title: "Mass Plantation Event",
+      description: "Large-scale community plantation event at Kalyana Vana.",
+      alt: "Gulbarga plantation - mass tree planting event"
+    },
+    {
+      title: "Green Cover Expansion",
+      description: "Expanding forest cover in the semi-arid Gulbarga region.",
+      alt: "Gulbarga Kalyana Vana - green cover expansion"
+    },
+    {
+      title: "Environmental Conservation",
+      description: "Conservation efforts through strategic tree plantation.",
+      alt: "Gulbarga plantation - environmental conservation"
+    },
+    {
+      title: "Successful Drive",
+      description: "Completion of the successful Kalyana Vana plantation drive.",
+      alt: "Gulbarga Kalyana Vana - successful plantation"
+    },
+    {
+      title: "Community Achievement",
+      description: "Collective achievement in creating a greener Gulbarga.",
+      alt: "Gulbarga plantation - community achievement"
     }
   ];
 
   const mysuruImages = [
-    'https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1650793889985-2090d35deb66?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1656783208368-a7d176736535?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1642265466368-2a491569308a?w=400&h=400&fit=crop',
+    // Environmental day 2025 - Varuna Lake
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1466.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1500.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1514.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1516.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1519.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1528 (1).jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1542.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1547.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1577.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1584 (1).jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1586.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1587.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1665 (1).jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1682 (2).jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1722.jpeg',
+    '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_4563.jpeg',
+    // New folder
+    '/assets/images/Mysuru/New folder/IMG_1739 (1).jpeg',
+    '/assets/images/Mysuru/New folder/IMG_1752.jpeg',
+    '/assets/images/Mysuru/New folder/IMG_1770.jpeg',
+    '/assets/images/Mysuru/New folder/IMG_1772.jpeg',
+    '/assets/images/Mysuru/New folder/IMG_1775.jpeg',
+    '/assets/images/Mysuru/New folder/IMG_1776.jpeg',
+    '/assets/images/Mysuru/New folder/IMG_1787.jpeg',
+    '/assets/images/Mysuru/New folder/IMG_1993 (1).jpeg',
+    '/assets/images/Mysuru/New folder/IMG_2002.jpeg',
+    '/assets/images/Mysuru/New folder/IMG_2008 (1).jpeg',
   ];
   
   const mysuruImageDetails = [
+    // Environmental day 2025 - Varuna Lake
     {
-      title: "Heritage Gardens",
-      description: "Preserving traditional garden designs with native plants.",
-      alt: "Mysuru heritage garden project"
+      title: "Varuna Lake Restoration",
+      description: "Environmental Day 2025 celebration at Varuna Lake with conservation activities.",
+      alt: "Mysuru Varuna Lake - Environmental Day 2025"
     },
     {
-      title: "River Restoration",
-      description: "Planting along riverbanks to prevent erosion and pollution.",
-      alt: "Mysuru river restoration project"
+      title: "Lake Cleanup Drive",
+      description: "Community members participating in Varuna Lake cleanup initiative.",
+      alt: "Mysuru Varuna Lake - cleanup drive"
     },
     {
-      title: "Temple Grounds",
-      description: "Greening temple premises with sacred groves and trees.",
-      alt: "Mysuru temple grounds greening"
+      title: "Environmental Awareness",
+      description: "Raising awareness about lake conservation and environmental protection.",
+      alt: "Mysuru Environmental Day - awareness campaign"
     },
     {
-      title: "Urban Forest",
-      description: "Creating contiguous forest patches in urban areas.",
-      alt: "Mysuru urban forest project"
+      title: "Community Gathering",
+      description: "Large community turnout for Environmental Day at Varuna Lake.",
+      alt: "Mysuru Varuna Lake - community event"
     },
     {
-      title: "Biodiversity Corridor",
-      description: "Connecting fragmented habitats for wildlife movement.",
-      alt: "Mysuru biodiversity corridor"
+      title: "Lake Conservation",
+      description: "Active conservation efforts to protect and restore Varuna Lake.",
+      alt: "Mysuru Varuna Lake - conservation project"
+    },
+    {
+      title: "Volunteer Action",
+      description: "Dedicated volunteers working on lake restoration activities.",
+      alt: "Mysuru Environmental Day - volunteer participation"
+    },
+    {
+      title: "Water Body Protection",
+      description: "Protecting vital water resources through community engagement.",
+      alt: "Mysuru Varuna Lake - water body protection"
+    },
+    {
+      title: "Environmental Pledge",
+      description: "Participants taking pledge to protect the environment.",
+      alt: "Mysuru Environmental Day - environmental pledge"
+    },
+    {
+      title: "Lake Greenery",
+      description: "Plantation activities around Varuna Lake to enhance green cover.",
+      alt: "Mysuru Varuna Lake - lakeside plantation"
+    },
+    {
+      title: "Community Impact",
+      description: "Creating lasting impact through community-led environmental action.",
+      alt: "Mysuru Environmental Day - community impact"
+    },
+    {
+      title: "Nature Conservation",
+      description: "Preserving natural habitats around the lake ecosystem.",
+      alt: "Mysuru Varuna Lake - nature conservation"
+    },
+    {
+      title: "Group Participation",
+      description: "Collaborative efforts in Environmental Day activities.",
+      alt: "Mysuru Environmental Day - group activity"
+    },
+    {
+      title: "Lake Ecosystem",
+      description: "Working to maintain and restore the lake's ecosystem health.",
+      alt: "Mysuru Varuna Lake - ecosystem restoration"
+    },
+    {
+      title: "Environmental Education",
+      description: "Educational programs about lake conservation and sustainability.",
+      alt: "Mysuru Environmental Day - education program"
+    },
+    {
+      title: "Lakeside Activities",
+      description: "Various conservation activities conducted at the lake premises.",
+      alt: "Mysuru Varuna Lake - conservation activities"
+    },
+    {
+      title: "Celebration of Nature",
+      description: "Environmental Day celebration highlighting importance of natural resources.",
+      alt: "Mysuru Environmental Day - nature celebration"
+    },
+    // New folder
+    {
+      title: "Plantation Initiative",
+      description: "Tree plantation drive as part of Mysuru green initiative.",
+      alt: "Mysuru plantation - tree planting drive"
+    },
+    {
+      title: "Sapling Care",
+      description: "Volunteers nurturing saplings for successful growth.",
+      alt: "Mysuru plantation - sapling care"
+    },
+    {
+      title: "Green Mission",
+      description: "Community-driven mission to increase Mysuru's green cover.",
+      alt: "Mysuru plantation - green mission"
+    },
+    {
+      title: "Urban Greening",
+      description: "Strategic tree planting in urban areas of Mysuru.",
+      alt: "Mysuru plantation - urban greening project"
+    },
+    {
+      title: "Tree Planting Day",
+      description: "Special tree planting event with community participation.",
+      alt: "Mysuru plantation - tree planting day"
+    },
+    {
+      title: "Environmental Action",
+      description: "Taking concrete action towards environmental sustainability.",
+      alt: "Mysuru plantation - environmental action"
+    },
+    {
+      title: "Native Species",
+      description: "Planting native tree species suitable for Mysuru climate.",
+      alt: "Mysuru plantation - native species planting"
+    },
+    {
+      title: "Volunteer Team",
+      description: "Dedicated team of volunteers contributing to the plantation.",
+      alt: "Mysuru plantation - volunteer team"
+    },
+    {
+      title: "Green Mysuru",
+      description: "Building a greener and more sustainable Mysuru city.",
+      alt: "Mysuru plantation - green city initiative"
+    },
+    {
+      title: "Planting Success",
+      description: "Successful completion of the plantation drive in Mysuru.",
+      alt: "Mysuru plantation - successful drive"
     }
   ];
 
@@ -256,13 +525,13 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
 
           <div className="space-y-6">
             <ScrollReveal delay={0.1}>
-              <CityGallery cityName="Bangalore" images={bangaloreImages} imageDetails={bangaloreImageDetails} />
+              <CityGallery cityName="Bangalore" images={bangaloreImages} />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <CityGallery cityName="Gulbarga" images={gularbaImages} imageDetails={gularbaImageDetails} />
+              <CityGallery cityName="Gulbarga" images={gularbaImages} />
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <CityGallery cityName="Mysuru" images={mysuruImages} imageDetails={mysuruImageDetails} />
+              <CityGallery cityName="Mysuru" images={mysuruImages} />
             </ScrollReveal>
           </div>
         </div>

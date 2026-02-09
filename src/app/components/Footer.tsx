@@ -13,40 +13,45 @@ export function Footer({ onNavigate }: FooterProps) {
   ];
 
   return (
-    <footer className="relative bg-[#E2DBD0] border-t border-[#d1c7bc] overflow-hidden" style={{ minHeight: '450px' }}>
+    <footer
+      className="relative bg-[#E2DBD0] border-t border-[#d1c7bc] overflow-hidden"
+      style={{ minHeight: '450px' }}
+    >
       {/* Parallax Forest Background */}
       <div className="parallax-container">
-        {/* Distant Tree Layer - Slowest and lightest */}
-        <div 
+        <div
           className="parallax-layer parallax-layer-1"
           style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
-        ></div>
-        
-        {/* Middle Tree Layer - Medium speed and opacity */}
-        <div 
+        />
+        <div
           className="parallax-layer parallax-layer-2"
           style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
-        ></div>
-        
-        {/* Foreground Tree Layer - Fastest and darkest */}
-        <div 
+        />
+        <div
           className="parallax-layer parallax-layer-3"
           style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
-        ></div>
+        />
       </div>
-      
-      {/* Footer Content - Static over the parallax background */}
+
+      {/* Footer Content */}
       <div className="footer-content max-w-7xl mx-auto px-6 py-12 relative z-50">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
           {/* Brand */}
-          <div>
-            <div className="flex items-center mb-1 mt-">
-              <img 
-                src="/assets/images/X-nobg.svg" 
-                alt="BuildX Nature Trust" 
-                className="h-58 w-auto object-contain"
-              />
-            </div>
+          <div className="relative">
+            <img
+              src="/assets/images/X-nobg.svg"
+              alt="BuildX Nature Trust"
+              className="
+                absolute
+                -top-20
+                -left-12
+                h-60
+                w-auto
+                object-contain
+                z-50
+              "
+            />
           </div>
 
           {/* Quick Links */}
@@ -55,7 +60,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-2 text-sm text-[#103713]/70">
               {quickLinks.map((link) => (
                 <li key={link.page}>
-                  <button 
+                  <button
                     onClick={() => onNavigate?.(link.page)}
                     className="hover:text-[#628B35] transition-colors"
                   >
