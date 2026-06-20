@@ -215,8 +215,8 @@
 .forest-band {
   position: relative;
   width: 100%;
-  height: clamp(165px, 19vw, 260px);
-  margin: -90px 0 0;
+  height: clamp(90px, 8vw, 125px);
+  margin: -8px 0 0;
   overflow: hidden;
   z-index: 5;
 }
@@ -228,7 +228,7 @@
   z-index: 5;
   pointer-events: none;
   /* Soft fade where the forest meets the content above */
-  mask-image: linear-gradient(to bottom, transparent, black 8%);
+  mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.75) 16%, black 32%);
 }
 
 .parallax-container::after {
@@ -237,8 +237,9 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(226, 219, 208, 0.45),
-    rgba(226, 219, 208, 0) 10%
+    rgba(226, 219, 208, 0.68),
+    rgba(226, 219, 208, 0.22) 24%,
+    rgba(226, 219, 208, 0) 46%
   );
   pointer-events: none;
   z-index: 40;
@@ -264,28 +265,28 @@
   height: calc(100% + 50px);
   background-repeat: repeat-x;
   background-position: left bottom;
-  background-size: auto 150%; /* Oversizes and crops the artwork so the trees fill the band without bottom gaps */
+  background-size: auto 138%; /* Oversizes and crops the artwork so the trees fill the band without bottom gaps */
   will-change: transform;
 }
 
 .parallax-layer-1 {
-  animation: continuousScroll 200s linear infinite;
-  opacity: 0.35;
-  filter: blur(2px) brightness(1.05); /* Soft distance, still legible */
+  animation: continuousScroll 220s linear infinite;
+  opacity: 0.42;
+  filter: blur(2.4px) brightness(1.08) saturate(0.95); /* Soft distance, still legible */
   z-index: 10;
 }
 
 .parallax-layer-2 {
-  animation: continuousScroll 150s linear infinite;
-  opacity: 0.65;
-  filter: blur(1px);
+  animation: continuousScroll 165s linear infinite;
+  opacity: 0.68;
+  filter: blur(1px) brightness(1.02) saturate(1.05);
   z-index: 20;
 }
 
 .parallax-layer-3 {
-  animation: continuousScroll 100s linear infinite;
-  opacity: 1;
-  filter: drop-shadow(0 2px 6px rgba(16, 55, 19, 0.15));
+  animation: continuousScroll 115s linear infinite;
+  opacity: 0.95;
+  filter: saturate(1.08) contrast(1.03) drop-shadow(0 2px 6px rgba(16, 55, 19, 0.16));
   z-index: 30;
 }
 

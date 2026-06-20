@@ -16,7 +16,7 @@ export function Footer({ onNavigate }: FooterProps) {
   return (
     <footer className="relative bg-[#E2DBD0] border-t border-[#d1c7bc] overflow-hidden">
       {/* Footer Content */}
-      <div className="footer-content max-w-7xl mx-auto px-5 py-5 relative z-50">
+      <div className="footer-content max-w-7xl mx-auto px-5 pt-3 pb-3 relative z-50">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-center">
 
           {/* Brand */}
@@ -71,7 +71,7 @@ export function Footer({ onNavigate }: FooterProps) {
       </div>
 
       {/* Copyright - sits with the content, above the forest */}
-      <div className="relative z-50 max-w-7xl mx-auto px-5 pt-3 pb-0 border-t border-[#d1c7bc] text-center text-xs md:text-sm text-[#103713]/60">
+      <div className="relative z-50 max-w-7xl mx-auto px-5 pt-2 pb-6 border-t border-[#d1c7bc] text-center text-xs md:text-sm text-[#103713]/60">
         © 2026 BuildX Nature Trust. All rights reserved.
       </div>
 
