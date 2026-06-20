@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <g id="petal">
+      <path d="M120 60 C132 78, 132 102, 120 120 C108 102, 108 78, 120 60 Z" fill="none" stroke="#628B35" stroke-width="1.5"/>
+    </g>
+    <g id="motif">
+      <circle cx="120" cy="120" r="6" fill="none" stroke="#628B35" stroke-width="1.5"/>
+      <circle cx="120" cy="120" r="14" fill="none" stroke="#628B35" stroke-width="1"/>
+      <use href="#petal" transform="rotate(0 120 120)"/>
+      <use href="#petal" transform="rotate(45 120 120)"/>
+      <use href="#petal" transform="rotate(90 120 120)"/>
+      <use href="#petal" transform="rotate(135 120 120)"/>
+      <use href="#petal" transform="rotate(180 120 120)"/>
+      <use href="#petal" transform="rotate(225 120 120)"/>
+      <use href="#petal" transform="rotate(270 120 120)"/>
+      <use href="#petal" transform="rotate(315 120 120)"/>
+      <circle cx="120" cy="120" r="48" fill="none" stroke="#628B35" stroke-width="1" stroke-dasharray="3 5"/>
+    </g>
+  </defs>
+  <use href="#motif"/>
+  <circle cx="0" cy="0" r="20" fill="none" stroke="#628B35" stroke-width="1" stroke-dasharray="2 4"/>
+  <circle cx="240" cy="0" r="20" fill="none" stroke="#628B35" stroke-width="1" stroke-dasharray="2 4"/>
+  <circle cx="0" cy="240" r="20" fill="none" stroke="#628B35" stroke-width="1" stroke-dasharray="2 4"/>
+  <circle cx="240" cy="240" r="20" fill="none" stroke="#628B35" stroke-width="1" stroke-dasharray="2 4"/>
+</svg>

@@ -5,7 +5,6 @@ const heroImages = [
   '/assets/images/hero1.jpg',
   '/assets/images/hero2.jpg',
   '/assets/images/hero3.jpg',
-  '/assets/images/hero4.jpg',
 ];
 
 const animatedPhrases = [
@@ -79,7 +78,7 @@ export function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
-                  className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl italic text-[#103713]"
+                  className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl italic text-[#FFFDF5]"
                   style={{ fontFamily: 'Cormorant, serif' }}
                 >
                   {animatedPhrases[currentPhraseIndex]}

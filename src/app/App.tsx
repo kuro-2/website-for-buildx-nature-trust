@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
 import { AboutPage } from './components/AboutPage';
 import { ProgramsPage } from './components/ProgramsPage';
+import { WasteManagementPage } from './components/WasteManagementPage';
 import { GreenCatalogPage } from './components/GreenCatalogPage';
 import { GalleryPage } from './components/GalleryPage';
 import { ContactPage } from './components/ContactPage';
@@ -33,6 +34,8 @@ export default function App() {
         return <AboutPage />;
       case 'programs':
         return <ProgramsPage />;
+      case 'waste-management':
+        return <WasteManagementPage />;
       case 'catalog':
         return <GreenCatalogPage />;
       case 'gallery':

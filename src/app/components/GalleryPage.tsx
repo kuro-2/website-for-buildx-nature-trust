@@ -3,6 +3,8 @@ import { ScrollReveal } from './ScrollReveal';
 import Masonry from 'react-responsive-masonry';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { BackgroundTexture } from './BackgroundTexture';
+import { SectionDivider } from './SectionDivider';
 
 interface GalleryPageProps {
   onNavigate?: (page: string) => void;
@@ -59,10 +61,11 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
   };
 
   return (
-    <div className="pt-24 bg-[#E2DBD0]">
+    <div className="relative pt-24 bg-[#E2DBD0]">
       {/* Hero Section */}
-      <section className="py-20 bg-[#E2DBD0]">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h1 className="text-4xl md:text-6xl text-center mb-8 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Gallery
@@ -76,9 +79,12 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Tabs */}
-      <section className="pb-20 bg-[#E2DBD0]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pb-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <div className="flex justify-center gap-8 mb-12">
               <button

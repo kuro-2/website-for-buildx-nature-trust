@@ -1,6 +1,8 @@
 import { ScrollReveal } from './ScrollReveal';
 import { Package } from 'lucide-react';
 import { GreenCatalogCard } from './ui/GreenCatalogCard';
+import { BackgroundTexture } from './BackgroundTexture';
+import { SectionDivider } from './SectionDivider';
 
 interface GreenCatalogPageProps {
   onNavigate?: (page: string) => void;
@@ -8,9 +10,10 @@ interface GreenCatalogPageProps {
 
 export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
   return (
-    <div className="pt-24 min-h-screen bg-[#E2DBD0]">
-      <section className="py-32 bg-[#E2DBD0]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+    <div className="relative pt-24 min-h-screen bg-[#E2DBD0]">
+      <section className="py-32 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="leaf" />
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <ScrollReveal>
             <div className="mb-8">
               <Package size={64} strokeWidth={1.5} className="text-[#628B35] mx-auto mb-8" />
@@ -35,9 +38,12 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Future Plans */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="leaf" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h2 className="text-3xl text-center mb-12 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               What to Expect

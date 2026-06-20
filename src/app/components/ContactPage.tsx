@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ScrollReveal } from './ScrollReveal';
 import { Phone, Instagram, Linkedin, Mail, Send } from 'lucide-react';
+import { BackgroundTexture } from './BackgroundTexture';
+import { SectionDivider } from './SectionDivider';
 
 interface ContactPageProps {
   onNavigate?: (page: string) => void;
@@ -33,10 +35,11 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
   };
 
   return (
-    <div className="pt-24 min-h-screen bg-[#E2DBD0]">
+    <div className="relative pt-24 min-h-screen bg-[#E2DBD0]">
       {/* Hero Section */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h1 className="text-5xl md:text-6xl text-center mb-8 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Get in Touch
@@ -50,9 +53,12 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Form Section */}
-      <section className="py-12 md:py-20 bg-[#E2DBD0]">
-        <div className="max-w-4xl mx-auto px-4 md:px-6">
+      <section className="py-12 md:py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
           <ScrollReveal>
             <div className="bg-[#FFFDF5] p-6 md:p-12 rounded-2xl md:rounded-3xl shadow-sm border border-[#d1c7bc]">
               {isSubmitted ? (
@@ -150,9 +156,12 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         </div>
       </section>
 
+      <SectionDivider flip />
+
       {/* Contact Information */}
-      <section className="py-12 md:py-20 bg-[#FFFDF5]">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
+      <section className="py-12 md:py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Phone */}
             <ScrollReveal>
@@ -222,9 +231,12 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Office Location */}
-      <section className="py-20 bg-[#E2DBD0]">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
@@ -265,6 +277,8 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           </ScrollReveal>
         </div>
       </section>
+
+      <SectionDivider flip />
 
       {/* Call to Action */}
       <section 

@@ -3,6 +3,8 @@ import { ScrollReveal } from './ScrollReveal';
 import { Sprout, Droplets, Recycle, Users, BookOpen, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ProgramsPageCard } from './ui/ProgramsPageCard';
+import { BackgroundTexture } from './BackgroundTexture';
+import { SectionDivider } from './SectionDivider';
 
 interface CityGalleryProps {
   cityName: string;
@@ -493,10 +495,11 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
   ];
 
   return (
-    <div className="pt-24 bg-[#E2DBD0]">
+    <div className="relative pt-24 bg-[#E2DBD0]">
       {/* Hero Section */}
-      <section className="py-20 bg-[#E2DBD0]">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="leaf" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h1 className="text-4xl md:text-6xl text-center mb-8 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Our Programs
@@ -509,9 +512,12 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Tree Plantation Program */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="leaf" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Tree Plantation
@@ -537,27 +543,12 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
         </div>
       </section>
 
-      {/* Waste Management */}
-      <section className="py-20 bg-[#E2DBD0]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-              Waste Management
-            </h2>
-            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-8" />
-            <div className="inline-block px-8 py-16 border-2 border-[#d1c7bc] bg-[#FFFDF5]">
-              <p className="text-xl text-[#628B35]">In Process</p>
-              <p className="text-sm text-[#103713]/70 mt-4">
-                We're developing comprehensive waste management solutions. Stay tuned.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SectionDivider flip />
 
       {/* Our Focus Areas */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="leaf" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Our Focus

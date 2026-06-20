@@ -38,7 +38,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Us' },
-    { id: 'programs', label: 'Programs' },
+    { id: 'programs', label: 'Plantation Drive' },
+    { id: 'waste-management', label: 'Waste Management' },
     { id: 'catalog', label: 'Green Catalog' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact' },
@@ -49,7 +50,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       ref={navRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-[#103713] shadow-md`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-[#FFFDF5] shadow-md`}
     >
       <div className="max-w-7xl mx-auto pl-0 py-3">
         <div className="flex items-center justify-between h-16">
@@ -72,9 +73,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
                 className={`relative text-sm tracking-wide transition-colors ${
-                  currentPage === item.id 
-                    ? 'text-[#628B35]' 
-                    : 'text-[#FFFDF5]/80 hover:text-[#628B35]'
+                  currentPage === item.id
+                    ? 'text-[#628B35]'
+                    : 'text-[#103713]/80 hover:text-[#628B35]'
                 }`}
               >
                 {item.label}
@@ -92,7 +93,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[#FFFDF5]"
+            className="md:hidden p-2 text-[#103713]"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -105,7 +106,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden bg-[#103713]"
+              className="md:hidden overflow-hidden bg-[#FFFDF5]"
             >
               <div className="flex flex-col gap-4 py-6">
                 {navItems.map((item) => (
@@ -116,9 +117,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       setMobileMenuOpen(false);
                     }}
                     className={`text-left text-base transition-colors ${
-                      currentPage === item.id 
-                        ? 'text-[#628B35]' 
-                        : 'text-[#FFFDF5]'
+                      currentPage === item.id
+                        ? 'text-[#628B35]'
+                        : 'text-[#103713]'
                     }`}
                   >
                     {item.label}

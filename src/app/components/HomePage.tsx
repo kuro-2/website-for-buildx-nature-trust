@@ -3,6 +3,8 @@ import { Hero } from './Hero';
 import { ScrollReveal } from './ScrollReveal';
 import { ArrowRight } from 'lucide-react';
 import { HomePageCard } from './ui/HomePageCard';
+import { BackgroundTexture } from './BackgroundTexture';
+import { SectionDivider } from './SectionDivider';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -10,14 +12,15 @@ interface HomePageProps {
 
 export function HomePage({ onNavigate }: HomePageProps) {
   return (
-    <div>
+    <div className="relative">
       <Hero />
 
       {/* <ImpactCounter /> */}
 
       {/* Introduction Section */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="leaf" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl text-center mb-8 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Rooted in Purpose
@@ -39,9 +42,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Values Section */}
-      <section className="py-20 bg-[#E2DBD0]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="leaf" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl text-center mb-16 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               What Guides Us
@@ -84,6 +90,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
+
+      <SectionDivider flip />
 
       {/* Call to Action */}
       <section 

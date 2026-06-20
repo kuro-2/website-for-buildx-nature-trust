@@ -1,5 +1,7 @@
 import { ScrollReveal } from './ScrollReveal';
 import { AboutPageCard } from './ui/AboutPageCard';
+import { BackgroundTexture } from './BackgroundTexture';
+import { SectionDivider } from './SectionDivider';
 
 interface TeamMember {
   name: string;
@@ -56,10 +58,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   ];
 
   return (
-    <div className="pt-24 bg-[#E2DBD0]">
+    <div className="relative pt-24 bg-[#E2DBD0]">
       {/* Hero Section */}
-      <section className="py-20 bg-[#E2DBD0]">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h1 className="text-4xl md:text-6xl text-center mb-8 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               About Us
@@ -81,9 +84,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Core Focus Areas */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Our Focus Areas
@@ -128,9 +134,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
+      <SectionDivider flip />
+
       {/* Partnership & Impact Section */}
-      <section className="py-20 bg-[#E2DBD0]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <ScrollReveal>
             <div className="space-y-8">
               <p className="text-lg leading-relaxed text-[#103713]/80">
@@ -144,9 +153,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Team Section */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
               Our Team
@@ -164,9 +176,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
+      <SectionDivider flip />
+
       {/* Mission & Vision */}
-      <section className="py-20 bg-[#FFFDF5]">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
+        <BackgroundTexture variant="rangoli" />
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <ScrollReveal>
               <div className="h-96">
