@@ -4,7 +4,6 @@ import { ScrollReveal } from './ScrollReveal';
 import { ArrowRight } from 'lucide-react';
 import { HomePageCard } from './ui/HomePageCard';
 import { BackgroundTexture } from './BackgroundTexture';
-import { SectionDivider } from './SectionDivider';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -42,8 +41,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Values Section */}
       <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
         <BackgroundTexture variant="leaf" />
@@ -60,7 +57,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 <HomePageCard 
                   title="Responsibility"
                   description="We take ownership of our impact and commit to sustainable practices that honor the earth."
-                  imageUrl="https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/What-guide-us/kristaps-ungurs-owcJsiIK7UU-unsplash.jpg"
                   altText="Environmental responsibility and sustainability"
                 />
               </div>
@@ -71,7 +68,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 <HomePageCard 
                   title="Community"
                   description="Real change happens together. We build networks of people who care and act."
-                  imageUrl="https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/What-guide-us/agnese-rudzite-kSxkjuDMY0Q-unsplash.jpg"
                   altText="Community environmental action"
                 />
               </div>
@@ -82,7 +79,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 <HomePageCard 
                   title="Hope"
                   description="Every seed planted is a promise. We believe in a future where nature and humanity thrive."
-                  imageUrl="https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/What-guide-us/kristaps-ungurs-vs-eYSV5lMU-unsplash.jpg"
                   altText="Hope for a greener future"
                 />
               </div>
@@ -90,8 +87,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
-
-      <SectionDivider flip />
 
       {/* Call to Action */}
       <section 

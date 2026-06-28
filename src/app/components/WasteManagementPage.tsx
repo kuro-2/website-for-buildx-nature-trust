@@ -1,6 +1,5 @@
 import { ScrollReveal } from './ScrollReveal';
 import { BackgroundTexture } from './BackgroundTexture';
-import { SectionDivider } from './SectionDivider';
 
 export function WasteManagementPage() {
   return (
@@ -19,8 +18,6 @@ export function WasteManagementPage() {
           </ScrollReveal>
         </div>
       </section>
-
-      <SectionDivider />
 
       <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
         <BackgroundTexture variant="leaf" />

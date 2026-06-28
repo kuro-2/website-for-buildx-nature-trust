@@ -4,7 +4,6 @@ import { Sprout, Droplets, Recycle, Users, BookOpen, ChevronDown } from 'lucide-
 import { motion, AnimatePresence } from 'motion/react';
 import { ProgramsPageCard } from './ui/ProgramsPageCard';
 import { BackgroundTexture } from './BackgroundTexture';
-import { SectionDivider } from './SectionDivider';
 
 interface CityGalleryProps {
   cityName: string;
@@ -18,7 +17,7 @@ function CityGallery({ cityName, images }: CityGalleryProps) {
     <div className="border border-[#d1c7bc] overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 flex items-center justify-between bg-[#FFFDF5] hover:bg-[#FAFAFA] transition-colors"
+        className="w-full px-6 py-4 flex items-center justify-between bg-[#FFFDF5] hover:bg-[#628B35]/10 transition-colors"
       >
         <span className="text-lg text-[#103713]">{cityName}</span>
         <motion.div
@@ -463,12 +462,12 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
 
   const getFocusAreaImage = (title: string) => {
     const imageMap: Record<string, string> = {
-      'Plantation': 'https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop',
-      'Interior Waste Management': 'https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop',
-      'Community Action': 'https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop',
-      'Knowledge & Awareness': 'https://images.unsplash.com/photo-1656783208368-a7d176736535?w=400&h=400&fit=crop'
+      'Plantation': '/assets/images/Plantation-drive-focus-area/noah-buscher-x8ZStukS2PM-unsplash.jpg',
+      'Interior Waste Management': '/assets/images/Plantation-drive-focus-area/sticker-it-b-IoAXHvFVg-unsplash.jpg',
+      'Community Action': '/assets/images/Plantation-drive-focus-area/troy-olson-nhih0y0-CWo-unsplash.jpg',
+      'Knowledge & Awareness': '/assets/images/Plantation-drive-focus-area/kourosh-qaffari-RrhhzitYizg-unsplash.jpg'
     };
-    return imageMap[title] || 'https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop';
+    return imageMap[title] || '/assets/images/Plantation-drive-focus-area/noah-buscher-x8ZStukS2PM-unsplash.jpg';
   };
 
   const focusAreas = [
@@ -512,8 +511,6 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Tree Plantation Program */}
       <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
         <BackgroundTexture variant="leaf" />
@@ -543,8 +540,6 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
         </div>
       </section>
 
-      <SectionDivider flip />
-
       {/* Our Focus Areas */}
       <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
         <BackgroundTexture variant="leaf" />
@@ -556,7 +551,7 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
             <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-16" />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {focusAreas.map((area, index) => (
               <ScrollReveal key={area.title} delay={index * 0.1}>
                 <div className="h-96">

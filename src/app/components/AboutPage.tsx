@@ -1,7 +1,6 @@
 import { ScrollReveal } from './ScrollReveal';
 import { AboutPageCard } from './ui/AboutPageCard';
 import { BackgroundTexture } from './BackgroundTexture';
-import { SectionDivider } from './SectionDivider';
 
 interface TeamMember {
   name: string;
@@ -84,8 +83,6 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Core Focus Areas */}
       <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
         <BackgroundTexture variant="rangoli" />
@@ -103,7 +100,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <AboutPageCard 
                   title="Tree Plantation"
                   description="Restoring green cover through thoughtful plantation drives and long-term care in collaboration with local communities and NGOs."
-                  imageUrl="https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/Our-focus-areas/ashley-diane-worsham-RMLJ6KF1Zfk-unsplash.jpg"
                   altText="Tree plantation drive"
                 />
               </div>
@@ -114,7 +111,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <AboutPageCard 
                   title="Waste Management"
                   description="Addressing waste generated at corporate interior sites by reducing landfill impact and enabling responsible handling, reuse, upcycling and recycling of materials."
-                  imageUrl="https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/Our-focus-areas/frames-for-your-heart-lf7UohVEk44-unsplash.jpg"
                   altText="Waste management"
                 />
               </div>
@@ -125,7 +122,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <AboutPageCard 
                   title="Green Catalogue"
                   description="Promoting sustainable and recycled materials to help the industry make conscious, practical choices."
-                  imageUrl="https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/Our-focus-areas/eugene-golovesov-5CBy8ht8JXU-unsplash.jpg"
                   altText="Green catalogue"
                 />
               </div>
@@ -133,8 +130,6 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           </div>
         </div>
       </section>
-
-      <SectionDivider flip />
 
       {/* Partnership & Impact Section */}
       <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
@@ -152,8 +147,6 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           </ScrollReveal>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Team Section */}
       <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
@@ -176,8 +169,6 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
-      <SectionDivider flip />
-
       {/* Mission & Vision */}
       <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
         <BackgroundTexture variant="rangoli" />
@@ -188,7 +179,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <AboutPageCard 
                   title="Mission"
                   description="To take simple, consistent actions that support nature through plantation, waste management, and mindful choices that create real change on the ground."
-                  imageUrl="https://images.unsplash.com/photo-1656783208368-a7d176736535?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/Our-focus/jakob-owens-mORI_wfWvLI-unsplash.jpg"
                   altText="Nature mission"
                 />
               </div>
@@ -199,7 +190,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 <AboutPageCard 
                   title="Vision"
                   description="To build a future where caring for the Earth is part of everyday life, and where people, communities, and nature grow together in balance."
-                  imageUrl="https://images.unsplash.com/photo-1650793889985-2090d35deb66?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/Our-focus/bud-silva-kqguzgvYrtM-unsplash.jpg"
                   altText="Environmental vision"
                 />
               </div>

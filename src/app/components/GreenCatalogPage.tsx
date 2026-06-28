@@ -2,7 +2,6 @@ import { ScrollReveal } from './ScrollReveal';
 import { Package } from 'lucide-react';
 import { GreenCatalogCard } from './ui/GreenCatalogCard';
 import { BackgroundTexture } from './BackgroundTexture';
-import { SectionDivider } from './SectionDivider';
 
 interface GreenCatalogPageProps {
   onNavigate?: (page: string) => void;
@@ -38,8 +37,6 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Future Plans */}
       <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
         <BackgroundTexture variant="leaf" />
@@ -56,7 +53,7 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
                 <GreenCatalogCard 
                   title="Sustainable Products"
                   description="Eco-friendly alternatives for everyday items, from biodegradable packaging to renewable energy solutions."
-                  imageUrl="https://images.unsplash.com/photo-1695551407214-25a5dc6300b8?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/What-to-expect/micheile-henderson-7iGNwuxjBY8-unsplash.jpg"
                   altText="Sustainable products"
                 />
               </div>
@@ -67,7 +64,7 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
                 <GreenCatalogCard 
                   title="Native Plant Seeds"
                   description="Carefully selected native species to support local biodiversity and ecosystem health."
-                  imageUrl="https://images.unsplash.com/photo-1763856957026-a74ab4f05891?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/What-to-expect/jonathan-kemper-wzYc-_TIk8o-unsplash.jpg"
                   altText="Native plant seeds"
                 />
               </div>
@@ -78,7 +75,7 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
                 <GreenCatalogCard 
                   title="Educational Resources"
                   description="Guides and materials to help individuals and communities make informed environmental choices."
-                  imageUrl="https://images.unsplash.com/photo-1651349776781-7a8cf162a494?w=400&h=400&fit=crop"
+                  imageUrl="/assets/images/What-to-expect/walls-io-BfKX63Q1__0-unsplash.jpg"
                   altText="Educational resources"
                 />
               </div>

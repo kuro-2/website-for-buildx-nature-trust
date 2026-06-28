@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ScrollReveal } from './ScrollReveal';
 import { Phone, Instagram, Linkedin, Mail, Send } from 'lucide-react';
 import { BackgroundTexture } from './BackgroundTexture';
-import { SectionDivider } from './SectionDivider';
 
 interface ContactPageProps {
   onNavigate?: (page: string) => void;
@@ -52,8 +51,6 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           </ScrollReveal>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Form Section */}
       <section className="py-12 md:py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
@@ -156,8 +153,6 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         </div>
       </section>
 
-      <SectionDivider flip />
-
       {/* Contact Information */}
       <section className="py-12 md:py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
         <BackgroundTexture variant="rangoli" />
@@ -231,8 +226,6 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         </div>
       </section>
 
-      <SectionDivider />
-
       {/* Office Location */}
       <section className="py-20 bg-[#E2DBD0] relative z-0 overflow-hidden">
         <BackgroundTexture variant="rangoli" />
@@ -277,8 +270,6 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           </ScrollReveal>
         </div>
       </section>
-
-      <SectionDivider flip />
 
       {/* Call to Action */}
       <section 
