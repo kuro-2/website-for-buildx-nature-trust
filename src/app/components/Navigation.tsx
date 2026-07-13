@@ -52,17 +52,19 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-[#FFFDF5] shadow-md`}
     >
-      <div className="max-w-7xl mx-auto pl-0 py-3">
+      <div className="max-w-7xl mx-auto pl-0 pr-4 md:pr-6 py-3">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
             onClick={() => onNavigate('home')}
             className="flex items-center transition-opacity hover:opacity-70"
           >
-            <img 
-              src="/assets/images/X-nobg.svg" 
-              alt="BuildX Nature Trust" 
-              className="h-40 md:h-45 w-auto object-contain"
+            <img
+              src="/assets/images/X-nobg.png"
+              alt="BuildX Nature Trust"
+              className="h-14 md:h-16 w-auto object-contain"
+              loading="eager"
+              decoding="async"
             />
           </button>
 
@@ -93,7 +95,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[#103713]"
+            className="md:hidden p-3 text-[#103713] flex items-center justify-center"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -108,7 +111,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden overflow-hidden bg-[#FFFDF5]"
             >
-              <div className="flex flex-col gap-4 py-6">
+              <div className="flex flex-col py-2">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
@@ -116,7 +119,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       onNavigate(item.id);
                       setMobileMenuOpen(false);
                     }}
-                    className={`text-left text-base transition-colors ${
+                    className={`text-left text-base py-3 min-h-11 flex items-center transition-colors ${
                       currentPage === item.id
                         ? 'text-[#628B35]'
                         : 'text-[#103713]'

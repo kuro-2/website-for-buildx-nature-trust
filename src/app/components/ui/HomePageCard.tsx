@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface HomePageCardProps {
   title: string;
   description: string;
@@ -16,6 +14,8 @@ export function HomePageCard({ title, description, imageUrl, altText }: HomePage
           src={imageUrl}
           alt={altText}
           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-3"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       

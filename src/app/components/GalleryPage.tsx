@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ScrollReveal } from './ScrollReveal';
-import Masonry from 'react-responsive-masonry';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BackgroundTexture } from './BackgroundTexture';
@@ -41,6 +41,11 @@ const bangaloreGallery: GalleryImage[] = [
   { src: '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6921.jpeg', title: 'Community Impact', description: 'Creating lasting impact through community-school partnership.', alt: 'Bangalore plantation - community impact', category: 'volunteer' },
   { src: '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6930 (1).jpeg', title: 'Youth Leadership', description: 'Empowering students to lead environmental initiatives.', alt: 'Bangalore school - youth environmental leadership', category: 'volunteer' },
   { src: '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6957 (2).jpeg', title: 'Sustainable Future', description: 'Building a sustainable future through education and action.', alt: 'Bangalore govt school - sustainable future initiative', category: 'project' },
+  { src: '/assets/images/projects/IMG_4561.jpeg', title: 'Government School Outreach', description: 'BuildX volunteers addressing students at a government primary school plantation drive.', alt: 'Bangalore - BuildX team with government school students', category: 'volunteer' },
+  { src: '/assets/images/projects/IMG_6785 (1).jpeg', title: 'Chikkanagamangala Visit', description: 'The BuildX team at Government Junior Primary School, Chikkanagamangala, for the plantation and awareness program.', alt: 'Bangalore - team visit to government primary school', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG_6848 (1).jpeg', title: 'A Child\'s First Sapling', description: 'A child from the partner care institution proudly holding a sapling to be planted.', alt: 'Bangalore - child holding sapling at care institution', category: 'volunteer' },
+  { src: '/assets/images/gallery/5ba500c0-20f5-4eef-9a86-cf640f8f928e.jpeg', title: 'Best Out of Waste', description: 'A BuildX team member poses in a handmade upcycled photo frame during the office sustainability challenge.', alt: 'Bangalore - Best Out of Waste office activity photo frame', category: 'volunteer' },
+  { src: '/assets/images/gallery/80a8156a-eff6-413a-9f25-d928e551a2c9.jpeg', title: 'Green Team Spirit', description: 'Celebrating creativity and sustainability at the Best Out of Waste office activity.', alt: 'Bangalore - Best Out of Waste office activity celebration', category: 'volunteer' },
 ];
 
 const gulbargaGallery: GalleryImage[] = [
@@ -58,6 +63,14 @@ const gulbargaGallery: GalleryImage[] = [
   { src: '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5917 (1).jpeg', title: 'Environmental Conservation', description: 'Conservation efforts through strategic tree plantation.', alt: 'Gulbarga plantation - environmental conservation', category: 'project' },
   { src: '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5935.jpeg', title: 'Successful Drive', description: 'Completion of the successful Kalyana Vana plantation drive.', alt: 'Gulbarga Kalyana Vana - successful plantation', category: 'project' },
   { src: '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/WhatsApp Image 2025-09-12 at 6.29.03 PM (2).jpeg', title: 'Community Achievement', description: 'Collective achievement in creating a greener Gulbarga.', alt: 'Gulbarga plantation - community achievement', category: 'volunteer' },
+  { src: '/assets/images/projects/IMG_1467.jpeg', title: 'Dedication Seminar', description: 'A formal seminar session with university officials marking the Kalyana Vana afforestation dedication.', alt: 'Kalaburagi - Central University seminar session', category: 'project' },
+  { src: '/assets/images/projects/IMG_5815 (1).jpeg', title: 'Addressing the Gathering', description: 'A BuildX representative speaking at the Kalyana Vana 2 dedication ceremony.', alt: 'Kalaburagi - speaker at Kalyana Vana dedication', category: 'volunteer' },
+  { src: '/assets/images/projects/IMG_5863.jpeg', title: 'Kalyana Vana 2 Dedication', description: 'Group photo at the dedication of Kalyana Vana 2, a ground water recharge cum afforestation program.', alt: 'Kalaburagi - Kalyana Vana 2 dedication group photo', category: 'volunteer' },
+  { src: '/assets/images/projects/IMG_5870.jpeg', title: 'Site Survey', description: 'The BuildX team and partners surveying the afforestation site ahead of planting.', alt: 'Kalaburagi - site visit at Kalyana Vana', category: 'volunteer' },
+  { src: '/assets/images/projects/IMG_5921.jpeg', title: 'Dedication Ceremony', description: 'Dignitaries gathered at the Kalyana Vana 2 signage for the official dedication.', alt: 'Kalaburagi - Kalyana Vana 2 dedication signage', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG_4536.jpeg', title: 'Ground Water Recharge Program', description: 'Signage for the Kalyana Vana 2 ground water recharge cum afforestation program overlooking the plantation site.', alt: 'Kalaburagi - Kalyana Vana 2 signage and landscape', category: 'project' },
+  { src: '/assets/images/gallery/IMG_5712.jpeg', title: 'Watering a New Sapling', description: 'Carefully watering a newly planted sapling on the semi-arid Kalyana Vana grounds.', alt: 'Kalaburagi - watering sapling at Kalyana Vana', category: 'project' },
+  { src: '/assets/images/gallery/IMG_5802.jpeg', title: 'Panel Discussion', description: 'University officials and BuildX representatives at the Kalyana Vana dedication seminar.', alt: 'Kalaburagi - panel discussion at dedication seminar', category: 'project' },
 ];
 
 const mysuruGallery: GalleryImage[] = [
@@ -87,9 +100,46 @@ const mysuruGallery: GalleryImage[] = [
   { src: '/assets/images/Mysuru/New folder/IMG_1993 (1).jpeg', title: 'Volunteer Team', description: 'Dedicated team of volunteers contributing to the plantation.', alt: 'Mysuru plantation - volunteer team', category: 'volunteer' },
   { src: '/assets/images/Mysuru/New folder/IMG_2002.jpeg', title: 'Green Mysuru', description: 'Building a greener and more sustainable Mysuru city.', alt: 'Mysuru plantation - green city initiative', category: 'project' },
   { src: '/assets/images/Mysuru/New folder/IMG_2008 (1).jpeg', title: 'Planting Success', description: 'Successful completion of the plantation drive in Mysuru.', alt: 'Mysuru plantation - successful drive', category: 'project' },
+  { src: '/assets/images/gallery/IMG_1623 (1).jpeg', title: 'Team by the Lake', description: 'The BuildX team pausing for a moment by Varuna Lake during the Environmental Day plantation drive.', alt: 'Mysuru Varuna Lake - team photo by the water', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG_1682 (3).jpeg', title: 'Dedicated Sapling Care', description: 'Officials and volunteers watering a newly planted sapling at the Varuna Lake Environmental Day event.', alt: 'Mysuru Varuna Lake - watering a sapling', category: 'project' },
+  { src: '/assets/images/gallery/IMG_1329.jpeg', title: 'Press Coverage – Odanadi', description: 'A newspaper clipping covering the plantation and awareness drive with the Odanadi Boys Rehabilitation Centre.', alt: 'Mysuru - press clipping on Odanadi plantation event', category: 'project' },
+  { src: '/assets/images/gallery/d3ecd84a597a4020bd18d8ae336220c5.jpg', title: 'Press Coverage – Environment Day', description: 'Local newspaper coverage of the Environmental Day plantation and awareness activities in Mysuru.', alt: 'Mysuru - press clipping on Environment Day event', category: 'project' },
 ];
 
-const allGalleryImages: GalleryImage[] = [...bangaloreGallery, ...gulbargaGallery, ...mysuruGallery];
+const mumbaiGallery: GalleryImage[] = [
+  { src: '/assets/images/Mumbai/DSC_4338 (1).jpg', title: 'Ribbon Cutting Ceremony', description: 'The inaugural ribbon-cutting for the plantation drive at Government College of Education, Panvel.', alt: 'Mumbai Panvel - inauguration ribbon cutting ceremony', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4342 (1).jpg', title: 'Opening Remarks', description: 'Dignitaries addressing the gathering at the start of the Panvel plantation drive.', alt: 'Mumbai Panvel - opening ceremony remarks', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4350 (1).jpg', title: 'Partnership in Action', description: 'BuildX Nature Trust and Sahyog Foundation representatives coming together for the plantation drive.', alt: 'Mumbai Panvel - partner organizations at plantation drive', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4353 (2).jpg', title: 'Community Gathering', description: 'Students and staff of the Government College of Education gathered for the plantation event.', alt: 'Mumbai Panvel - community gathering at college', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4364 (2).jpg', title: 'Sapling Preparation', description: 'Saplings being readied for planting across the college grounds.', alt: 'Mumbai Panvel - saplings prepared for planting', category: 'project' },
+  { src: '/assets/images/Mumbai/DSC_4372.jpg', title: 'Planting Begins', description: 'Volunteers and students beginning the plantation drive at the college campus.', alt: 'Mumbai Panvel - plantation drive begins', category: 'project' },
+  { src: '/assets/images/Mumbai/DSC_4397.jpg', title: 'Hands in the Soil', description: 'A volunteer carefully placing a sapling into the freshly dug soil.', alt: 'Mumbai Panvel - planting sapling in soil', category: 'project' },
+  { src: '/assets/images/Mumbai/DSC_4409.jpg', title: 'Student Participation', description: 'Students of the Government College of Education actively taking part in the plantation drive.', alt: 'Mumbai Panvel - students participating in plantation', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4417.jpg', title: 'Team Effort', description: 'Volunteers working together to plant saplings across the campus grounds.', alt: 'Mumbai Panvel - team planting saplings', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4428 (2).jpg', title: 'Campus Greening', description: 'Transforming the college campus with new tree cover.', alt: 'Mumbai Panvel - campus greening initiative', category: 'project' },
+  { src: '/assets/images/Mumbai/DSC_4434 (1).jpg', title: 'Watering the Saplings', description: 'Freshly planted saplings being watered to help them establish.', alt: 'Mumbai Panvel - watering newly planted saplings', category: 'project' },
+  { src: '/assets/images/Mumbai/DSC_4447.jpg', title: 'Group Participation', description: 'A large group of volunteers and students gathered around the plantation site.', alt: 'Mumbai Panvel - group participation in plantation drive', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4456.jpg', title: 'Awareness Session', description: 'An environmental awareness session held alongside the plantation activity.', alt: 'Mumbai Panvel - environmental awareness session', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4460 (2).jpg', title: 'Sahyog Foundation Partnership', description: 'Representatives from Sahyog Foundation collaborating on the Panvel plantation drive.', alt: 'Mumbai Panvel - Sahyog Foundation partnership', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/DSC_4463 (1).jpg', title: 'Closing Moments', description: 'A group photo marking the successful completion of the plantation drive.', alt: 'Mumbai Panvel - closing group photo', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/IMG_2148 (1).jpeg', title: 'BuildX Team at Panvel', description: 'The BuildX team at the Government College of Education, Panvel, for the plantation drive.', alt: 'Mumbai Panvel - BuildX team at government college', category: 'volunteer' },
+  { src: '/assets/images/Mumbai/IMG_2153.jpeg', title: 'Green Campus Vision', description: 'Building towards a greener future for the Government College of Education, Panvel.', alt: 'Mumbai Panvel - green campus vision', category: 'project' },
+];
+
+const communityGallery: GalleryImage[] = [
+  { src: '/assets/images/projects/IMG_1668 (1).jpeg', title: 'Carrying a Sapling', description: 'A BuildX team member carrying a young mango sapling to its new home.', alt: 'Community plantation drive - carrying a sapling', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG_2974.jpeg', title: 'Nurturing New Growth', description: 'Hands gently watering a freshly planted sapling in the red soil.', alt: 'Community plantation drive - watering a sapling', category: 'project' },
+  { src: '/assets/images/gallery/DSC_3564.JPG', title: 'Community Plantation Drive', description: 'Officials and community members gathered for a tree plantation ceremony.', alt: 'Community plantation drive - dedication ceremony', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG-20250606-WA0003.jpg', title: 'Mango Sapling Planting', description: 'A small group planting a mango sapling as part of a community greening effort.', alt: 'Community plantation drive - mango sapling planting', category: 'project' },
+  { src: '/assets/images/gallery/IMG_2978.jpeg', title: 'Dedication Gathering', description: 'A community plantation ceremony bringing together officials, volunteers, and residents.', alt: 'Community plantation drive - gathering around new sapling', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG_2982.jpeg', title: 'Watering the New Tree', description: 'Officials watering a newly planted sapling to mark a community greening event.', alt: 'Community plantation drive - watering new tree', category: 'project' },
+  { src: '/assets/images/gallery/IMG_2986.jpeg', title: 'BuildX Team Moment', description: 'A quiet moment shared by BuildX team members during an office event.', alt: 'BuildX office - team moment', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG_2994.jpeg', title: 'Recognition Moment', description: 'BuildX team members marking a special recognition at the office.', alt: 'BuildX office - recognition moment', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG_2996.jpeg', title: 'Office Celebration', description: 'The BuildX team coming together to celebrate a shared milestone.', alt: 'BuildX office - team celebration', category: 'volunteer' },
+  { src: '/assets/images/gallery/IMG_3016.jpeg', title: 'Careful Watering', description: 'Watering a newly planted sapling to help it take root.', alt: 'Community plantation drive - careful watering of sapling', category: 'project' },
+];
+
+const allGalleryImages: GalleryImage[] = [...bangaloreGallery, ...gulbargaGallery, ...mysuruGallery, ...mumbaiGallery, ...communityGallery];
 
 export function GalleryPage({ onNavigate }: GalleryPageProps) {
   const [activeTab, setActiveTab] = useState<'projects' | 'volunteers'>('projects');
@@ -134,6 +184,8 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
           src={image.src}
           alt={image.alt}
           className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#103713]/90 via-[#103713]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-start justify-end p-5">
           <h3 className="text-lg text-white mb-1 drop-shadow-lg" style={{ fontFamily: 'Cormorant, serif' }}>
@@ -197,24 +249,17 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
             </div>
           </ScrollReveal>
 
-          {/* Gallery Grid */}
-          <div className="block md:hidden">
-            <Masonry columnsCount={1} gutter="1rem">
+          {/* Gallery Grid — a single Masonry instance is mounted at a time (columns/gutter
+              swap via JS resize listener), instead of mounting three breakpoint variants
+              simultaneously, which used to make every image download three times. */}
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 0: 1, 768: 2, 1024: 3 }}
+            gutterBreakPoints={{ 0: '1rem', 768: '1.5rem' }}
+          >
+            <Masonry>
               {images.map((image, index) => renderImageCard(image, index))}
             </Masonry>
-          </div>
-
-          <div className="hidden md:block lg:hidden">
-            <Masonry columnsCount={2} gutter="1.5rem">
-              {images.map((image, index) => renderImageCard(image, index))}
-            </Masonry>
-          </div>
-
-          <div className="hidden lg:block">
-            <Masonry columnsCount={3} gutter="1.5rem">
-              {images.map((image, index) => renderImageCard(image, index))}
-            </Masonry>
-          </div>
+          </ResponsiveMasonry>
         </div>
       </section>
 
@@ -226,7 +271,7 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center px-14 sm:px-16 md:px-20"
             onClick={closeLightbox}
             onKeyDown={handleKeyDown}
             tabIndex={0}
@@ -234,10 +279,11 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-50 p-3 text-white hover:text-[#628B35] transition-colors backdrop-blur-xl bg-white/10 border border-white/20 rounded-full shadow-lg"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-50 p-2 sm:p-3 text-white hover:text-[#628B35] transition-colors backdrop-blur-xl bg-white/10 border border-white/20 rounded-full shadow-lg"
               aria-label="Close lightbox"
             >
-              <X size={28} />
+              <X size={22} className="sm:hidden" />
+              <X size={28} className="hidden sm:block" />
             </button>
 
             {/* Previous Button */}
@@ -246,10 +292,11 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
                 e.stopPropagation();
                 goToPrevious();
               }}
-              className="absolute left-4 z-50 p-4 text-white hover:text-[#628B35] transition-all backdrop-blur-xl bg-white/10 border border-white/20 rounded-full shadow-lg hover:bg-white/20"
+              className="absolute left-1 sm:left-2 md:left-4 z-50 p-2 sm:p-3 md:p-4 text-white hover:text-[#628B35] transition-all backdrop-blur-xl bg-white/10 border border-white/20 rounded-full shadow-lg hover:bg-white/20"
               aria-label="Previous image"
             >
-              <ChevronLeft size={28} />
+              <ChevronLeft size={22} className="sm:hidden" />
+              <ChevronLeft size={28} className="hidden sm:block" />
             </button>
 
             {/* Image Container with Glass Effect */}
@@ -266,6 +313,8 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
                 src={images[currentImageIndex].src}
                 alt={images[currentImageIndex].alt}
                 className="w-full max-h-[65vh] object-contain rounded-xl"
+                loading="lazy"
+                decoding="async"
               />
               <div className="text-center mt-4 px-4">
                 <h3 className="text-2xl text-white mb-2" style={{ fontFamily: 'Cormorant, serif' }}>
@@ -283,14 +332,15 @@ export function GalleryPage({ onNavigate }: GalleryPageProps) {
                 e.stopPropagation();
                 goToNext();
               }}
-              className="absolute right-4 z-50 p-4 text-white hover:text-[#628B35] transition-all backdrop-blur-xl bg-white/10 border border-white/20 rounded-full shadow-lg hover:bg-white/20"
+              className="absolute right-1 sm:right-2 md:right-4 z-50 p-2 sm:p-3 md:p-4 text-white hover:text-[#628B35] transition-all backdrop-blur-xl bg-white/10 border border-white/20 rounded-full shadow-lg hover:bg-white/20"
               aria-label="Next image"
             >
-              <ChevronRight size={28} />
+              <ChevronRight size={22} className="sm:hidden" />
+              <ChevronRight size={28} className="hidden sm:block" />
             </button>
 
             {/* Image Counter with Glass Effect */}
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 px-4 py-2 backdrop-blur-xl bg-white/10 border border-white/20 rounded-full text-white text-sm font-medium shadow-lg">
+            <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 px-3 sm:px-4 py-1.5 sm:py-2 backdrop-blur-xl bg-white/10 border border-white/20 rounded-full text-white text-xs sm:text-sm font-medium shadow-lg whitespace-nowrap">
               {currentImageIndex + 1} / {images.length}
             </div>
           </motion.div>

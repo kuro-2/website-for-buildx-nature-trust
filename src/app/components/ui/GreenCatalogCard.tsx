@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface GreenCatalogCardProps {
   title: string;
   description: string;
@@ -17,6 +15,8 @@ export function GreenCatalogCard({ title, description, imageUrl, altText }: Gree
             src={imageUrl}
             alt={altText}
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

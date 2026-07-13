@@ -1,5 +1,5 @@
 import { Hero } from './Hero';
-// import { ImpactCounter } from './ImpactCounter';
+import { ImpactCounter } from './ImpactCounter';
 import { ScrollReveal } from './ScrollReveal';
 import { ArrowRight } from 'lucide-react';
 import { HomePageCard } from './ui/HomePageCard';
@@ -14,7 +14,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     <div className="relative">
       <Hero />
 
-      {/* <ImpactCounter /> */}
+      <ImpactCounter />
 
       {/* Introduction Section */}
       <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
@@ -53,33 +53,33 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <ScrollReveal delay={0.1}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <HomePageCard 
                   title="Responsibility"
                   description="We take ownership of our impact and commit to sustainable practices that honor the earth."
-                  imageUrl="/assets/images/What-guide-us/kristaps-ungurs-owcJsiIK7UU-unsplash.jpg"
+                  imageUrl="/assets/images/What-guide-us/responsibility-pinterest.jpg"
                   altText="Environmental responsibility and sustainability"
                 />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <HomePageCard 
                   title="Community"
                   description="Real change happens together. We build networks of people who care and act."
-                  imageUrl="/assets/images/What-guide-us/agnese-rudzite-kSxkjuDMY0Q-unsplash.jpg"
+                  imageUrl="/assets/images/What-guide-us/community-pinterest.jpg"
                   altText="Community environmental action"
                 />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <HomePageCard 
                   title="Hope"
                   description="Every seed planted is a promise. We believe in a future where nature and humanity thrive."
-                  imageUrl="/assets/images/What-guide-us/kristaps-ungurs-vs-eYSV5lMU-unsplash.jpg"
+                  imageUrl="/assets/images/What-guide-us/hope-pinterest.png"
                   altText="Hope for a greener future"
                 />
               </div>

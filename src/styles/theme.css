@@ -134,6 +134,13 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
+  body {
+    /* Safety net: full-bleed sections/decorative elements should never
+       be able to introduce a stray horizontal scrollbar on mobile. */
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
     position: relative;

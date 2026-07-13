@@ -16,6 +16,8 @@ function TeamCard({ member }: { member: TeamMember }) {
           src={member.image}
           alt={member.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="flex-grow flex flex-col justify-center">
@@ -96,33 +98,33 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal delay={0.1}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <AboutPageCard 
                   title="Tree Plantation"
                   description="Restoring green cover through thoughtful plantation drives and long-term care in collaboration with local communities and NGOs."
-                  imageUrl="/assets/images/Our-focus-areas/ashley-diane-worsham-RMLJ6KF1Zfk-unsplash.jpg"
+                  imageUrl="/assets/images/Our-focus-areas/plantation-pinterest.jpg"
                   altText="Tree plantation drive"
                 />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <AboutPageCard 
                   title="Waste Management"
                   description="Addressing waste generated at corporate interior sites by reducing landfill impact and enabling responsible handling, reuse, upcycling and recycling of materials."
-                  imageUrl="/assets/images/Our-focus-areas/frames-for-your-heart-lf7UohVEk44-unsplash.jpg"
+                  imageUrl="/assets/images/Our-focus-areas/waste-management-pinterest.jpg"
                   altText="Waste management"
                 />
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <AboutPageCard 
                   title="Green Catalogue"
                   description="Promoting sustainable and recycled materials to help the industry make conscious, practical choices."
-                  imageUrl="/assets/images/Our-focus-areas/eugene-golovesov-5CBy8ht8JXU-unsplash.jpg"
+                  imageUrl="/assets/images/Our-focus-areas/green-catalogue-pinterest.png"
                   altText="Green catalogue"
                 />
               </div>
@@ -175,7 +177,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <ScrollReveal>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <AboutPageCard 
                   title="Mission"
                   description="To take simple, consistent actions that support nature through plantation, waste management, and mindful choices that create real change on the ground."
@@ -186,7 +188,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <AboutPageCard 
                   title="Vision"
                   description="To build a future where caring for the Earth is part of everyday life, and where people, communities, and nature grow together in balance."

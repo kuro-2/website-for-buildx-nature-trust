@@ -70,7 +70,7 @@ export function Hero() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight" style={{ fontFamily: 'Cormorant, serif' }}>
               Mother Earth is
             </h1>
-            <div className="h-16 md:h-20 lg:h-24 flex items-center justify-center">
+            <div className="min-h-16 md:min-h-20 lg:min-h-24 flex items-center justify-center px-2">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentPhraseIndex}
@@ -78,7 +78,7 @@ export function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
-                  className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl italic text-[#FFFDF5]"
+                  className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl italic text-[#FFFDF5] leading-tight text-center"
                   style={{ fontFamily: 'Cormorant, serif' }}
                 >
                   {animatedPhrases[currentPhraseIndex]}
@@ -98,22 +98,6 @@ export function Hero() {
           </motion.p>
         </div>
       </div>
-
-      {/* Scroll Indicator
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2"
-        >
-          <div className="w-1 h-3 bg-white/70 rounded-full" />
-        </motion.div>
-      </motion.div> */}
     </div>
   );
 }

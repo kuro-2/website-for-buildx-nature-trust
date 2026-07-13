@@ -49,7 +49,7 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal delay={0.1}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <GreenCatalogCard 
                   title="Sustainable Products"
                   description="Eco-friendly alternatives for everyday items, from biodegradable packaging to renewable energy solutions."
@@ -60,7 +60,7 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <GreenCatalogCard 
                   title="Native Plant Seeds"
                   description="Carefully selected native species to support local biodiversity and ecosystem health."
@@ -71,7 +71,7 @@ export function GreenCatalogPage({ onNavigate }: GreenCatalogPageProps) {
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="h-96">
+              <div className="h-[26rem] md:h-96">
                 <GreenCatalogCard 
                   title="Educational Resources"
                   description="Guides and materials to help individuals and communities make informed environmental choices."

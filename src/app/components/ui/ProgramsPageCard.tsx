@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ProgramsPageCardProps {
   title: string;
   description: string;
@@ -16,6 +14,8 @@ export function ProgramsPageCard({ title, description, imageUrl, altText }: Prog
           src={imageUrl}
           alt={altText}
           className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       

@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import { motion } from 'motion/react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
-import { HomePage } from './components/HomePage';
-import { AboutPage } from './components/AboutPage';
-import { ProgramsPage } from './components/ProgramsPage';
-import { WasteManagementPage } from './components/WasteManagementPage';
-import { GreenCatalogPage } from './components/GreenCatalogPage';
-import { GalleryPage } from './components/GalleryPage';
-import { ContactPage } from './components/ContactPage';
+
+const HomePage = lazy(() => import('./components/HomePage').then((m) => ({ default: m.HomePage })));
+const AboutPage = lazy(() => import('./components/AboutPage').then((m) => ({ default: m.AboutPage })));
+const ProgramsPage = lazy(() => import('./components/ProgramsPage').then((m) => ({ default: m.ProgramsPage })));
+const WasteManagementPage = lazy(() => import('./components/WasteManagementPage').then((m) => ({ default: m.WasteManagementPage })));
+const GreenCatalogPage = lazy(() => import('./components/GreenCatalogPage').then((m) => ({ default: m.GreenCatalogPage })));
+const GalleryPage = lazy(() => import('./components/GalleryPage').then((m) => ({ default: m.GalleryPage })));
+const ContactPage = lazy(() => import('./components/ContactPage').then((m) => ({ default: m.ContactPage })));
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -57,7 +58,9 @@ export default function App() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
       >
-        {renderPage()}
+        <Suspense fallback={<div className="min-h-screen bg-[#E2DBD0]" />}>
+          {renderPage()}
+        </Suspense>
       </motion.main>
       <Footer onNavigate={handleNavigate} />
     </div>

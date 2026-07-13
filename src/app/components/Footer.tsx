@@ -22,9 +22,11 @@ export function Footer({ onNavigate }: FooterProps) {
           {/* Brand */}
           <div className="flex items-center justify-center md:justify-start md:-ml-2">
             <img
-              src="/assets/images/X-nobg.svg"
+              src="/assets/images/X-nobg.png"
               alt="BuildX Nature Trust"
               className="h-20 md:h-32 w-auto object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 

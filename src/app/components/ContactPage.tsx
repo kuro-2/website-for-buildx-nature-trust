@@ -168,8 +168,8 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                   Phone
                 </h3>
                 <div className="space-y-2 text-[#103713]/70 flex-grow">
-                  <p>+91 98765 43210</p>
-                  <p>+91 98765 43211</p>
+                  <p>+91 98454 90561</p>
+                  <p>+91 96320 20296</p>
                 </div>
               </div>
             </ScrollReveal>
