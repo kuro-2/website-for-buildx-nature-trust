@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { ScrollReveal } from './ScrollReveal';
-import { Sprout, Droplets, Users, BookOpen, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ProgramsPageCard } from './ui/ProgramsPageCard';
 import { BackgroundTexture } from './BackgroundTexture';
 
 interface CityEvent {
@@ -139,9 +138,6 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
     '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6921.jpeg',
     '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6930 (1).jpeg',
     '/assets/images/Bangalore - Govt school - Plantation drive and awareness/IMG_6957 (2).jpeg',
-    '/assets/images/projects/IMG_4561.jpeg',
-    '/assets/images/projects/IMG_6785 (1).jpeg',
-    '/assets/images/gallery/IMG_6848 (1).jpeg',
   ];
 
   const gularbaImages = [
@@ -159,14 +155,6 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
     '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5917 (1).jpeg',
     '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/IMG_5935.jpeg',
     '/assets/images/Gulbarga - plantation drive- Kalyana Vana 2/WhatsApp Image 2025-09-12 at 6.29.03 PM (2).jpeg',
-    '/assets/images/projects/IMG_1467.jpeg',
-    '/assets/images/projects/IMG_5815 (1).jpeg',
-    '/assets/images/projects/IMG_5863.jpeg',
-    '/assets/images/projects/IMG_5870.jpeg',
-    '/assets/images/projects/IMG_5921.jpeg',
-    '/assets/images/gallery/IMG_4536.jpeg',
-    '/assets/images/gallery/IMG_5712.jpeg',
-    '/assets/images/gallery/IMG_5802.jpeg',
   ];
 
   // World Environment Day at Varuna Lake
@@ -187,8 +175,6 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
     '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1682 (2).jpeg',
     '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_1722.jpeg',
     '/assets/images/Mysuru/Environmental day 2025 - Varuna Lake/IMG_4563.jpeg',
-    '/assets/images/gallery/IMG_1623 (1).jpeg',
-    '/assets/images/gallery/IMG_1682 (3).jpeg',
   ];
 
   // Planting & Learning at Odanadi (images from the unlabeled "New folder" set —
@@ -225,39 +211,6 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
     '/assets/images/Mumbai/DSC_4463 (1).jpg',
     '/assets/images/Mumbai/IMG_2148 (1).jpeg',
     '/assets/images/Mumbai/IMG_2153.jpeg',
-  ];
-
-  const getFocusAreaImage = (title: string) => {
-    const imageMap: Record<string, string> = {
-      'Plantation': '/assets/images/Plantation-drive-focus-area/noah-buscher-x8ZStukS2PM-unsplash.jpg',
-      'Soil and Water Care': '/assets/images/What-guide-us/kristaps-ungurs-vs-eYSV5lMU-unsplash.jpg',
-      'Community Action': '/assets/images/Plantation-drive-focus-area/troy-olson-nhih0y0-CWo-unsplash.jpg',
-      'Knowledge & Awareness': '/assets/images/Plantation-drive-focus-area/kourosh-qaffari-RrhhzitYizg-unsplash.jpg'
-    };
-    return imageMap[title] || '/assets/images/Plantation-drive-focus-area/noah-buscher-x8ZStukS2PM-unsplash.jpg';
-  };
-
-  const focusAreas = [
-    {
-      icon: <Sprout size={40} strokeWidth={1.5} />,
-      title: 'Plantation',
-      description: 'Strategic tree planting initiatives to restore green cover and combat climate change.',
-    },
-    {
-      icon: <Droplets size={40} strokeWidth={1.5} />,
-      title: 'Soil and Water Care',
-      description: 'Protecting soil health and water resources through sustainable land management practices.',
-    },
-    {
-      icon: <Users size={40} strokeWidth={1.5} />,
-      title: 'Community Action',
-      description: 'Empowering local communities to take ownership of environmental initiatives.',
-    },
-    {
-      icon: <BookOpen size={40} strokeWidth={1.5} />,
-      title: 'Knowledge & Awareness',
-      description: 'Educational programs to build environmental consciousness and informed action.',
-    },
   ];
 
   return (
@@ -300,14 +253,6 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
                 images={bangaloreImages}
                 eventTitle="Plantation Drive – Government School, Bengaluru"
                 description="A tree plantation and awareness drive held at a government school in Bengaluru, alongside students from Samrakshana Sankalpa Makkala Dhama."
-                extraEvents={[
-                  {
-                    title: 'Best Out of Waste – BuildX Office Activity',
-                    description:
-                      'An in-office upcycling challenge where BuildX team members creatively repurposed waste materials into useful and artistic items, encouraging sustainable habits within the workplace.',
-                    image: '/assets/images/gallery/5ba500c0-20f5-4eef-9a86-cf640f8f928e.jpeg',
-                  },
-                ]}
               />
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -342,34 +287,6 @@ export function ProgramsPage({ onNavigate }: ProgramsPageProps) {
                 description="A plantation drive at the Government College of Education, Panvel, organized in partnership with Sahyog Foundation."
               />
             </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Focus Areas */}
-      <section className="py-20 bg-[#FFFDF5] relative z-0 overflow-hidden">
-        <BackgroundTexture variant="leaf" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl text-center mb-4 text-[#103713]" style={{ fontFamily: 'Cormorant, serif' }}>
-              Our Focus
-            </h2>
-            <div className="w-16 h-[1px] bg-[#628B35] mx-auto mb-16" />
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {focusAreas.map((area, index) => (
-              <ScrollReveal key={area.title} delay={index * 0.1}>
-                <div className="h-[26rem] md:h-96">
-                  <ProgramsPageCard 
-                    title={area.title}
-                    description={area.description}
-                    imageUrl={getFocusAreaImage(area.title)}
-                    altText={`Focus area: ${area.title}`}
-                  />
-                </div>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>
