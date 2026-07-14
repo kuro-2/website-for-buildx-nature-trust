@@ -82,15 +82,15 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="parallax-container">
           <div
             className="parallax-layer parallax-layer-1"
-            style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
+            style={{ backgroundImage: "url('/assets/images/footer-animation-hq.webp')" }}
           />
           <div
             className="parallax-layer parallax-layer-2"
-            style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
+            style={{ backgroundImage: "url('/assets/images/footer-animation-hq.webp')" }}
           />
           <div
             className="parallax-layer parallax-layer-3"
-            style={{ backgroundImage: "url('/assets/images/footer-animation.png')" }}
+            style={{ backgroundImage: "url('/assets/images/footer-animation-hq.webp')" }}
           />
         </div>
       </div>

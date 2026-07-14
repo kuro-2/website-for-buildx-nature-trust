@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { ScrollReveal } from './ScrollReveal';
 import { AboutPageCard } from './ui/AboutPageCard';
 import { BackgroundTexture } from './BackgroundTexture';
@@ -176,27 +177,37 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         <BackgroundTexture variant="rangoli" />
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <ScrollReveal>
+            <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
               <div className="h-[26rem] md:h-96">
-                <AboutPageCard 
+                <AboutPageCard
                   title="Mission"
                   description="To take simple, consistent actions that support nature through plantation, waste management, and mindful choices that create real change on the ground."
                   imageUrl="/assets/images/Our-focus/jakob-owens-mORI_wfWvLI-unsplash.jpg"
                   altText="Nature mission"
                 />
               </div>
-            </ScrollReveal>
+            </motion.div>
 
-            <ScrollReveal delay={0.2}>
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
+            >
               <div className="h-[26rem] md:h-96">
-                <AboutPageCard 
+                <AboutPageCard
                   title="Vision"
                   description="To build a future where caring for the Earth is part of everyday life, and where people, communities, and nature grow together in balance."
                   imageUrl="/assets/images/Our-focus/bud-silva-kqguzgvYrtM-unsplash.jpg"
                   altText="Environmental vision"
                 />
               </div>
-            </ScrollReveal>
+            </motion.div>
           </div>
         </div>
       </section>

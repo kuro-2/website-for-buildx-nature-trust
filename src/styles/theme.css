@@ -278,22 +278,22 @@
 
 .parallax-layer-1 {
   animation: continuousScroll 220s linear infinite;
-  opacity: 0.42;
-  filter: blur(2.4px) brightness(1.08) saturate(0.95); /* Soft distance, still legible */
+  opacity: 0.48;
+  filter: blur(1.4px) brightness(1.06) saturate(1); /* Soft distance, still legible */
   z-index: 10;
 }
 
 .parallax-layer-2 {
   animation: continuousScroll 165s linear infinite;
-  opacity: 0.68;
-  filter: blur(1px) brightness(1.02) saturate(1.05);
+  opacity: 0.72;
+  filter: blur(0.5px) brightness(1.01) saturate(1.08);
   z-index: 20;
 }
 
 .parallax-layer-3 {
   animation: continuousScroll 115s linear infinite;
-  opacity: 0.95;
-  filter: saturate(1.08) contrast(1.03) drop-shadow(0 2px 6px rgba(16, 55, 19, 0.16));
+  opacity: 1;
+  filter: saturate(1.12) contrast(1.05) drop-shadow(0 2px 6px rgba(16, 55, 19, 0.16));
   z-index: 30;
 }
 
